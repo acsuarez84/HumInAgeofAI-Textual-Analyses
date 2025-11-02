@@ -15,6 +15,7 @@
 
     <nav class="tab-navigation">
         <button class="tab-btn active" data-tab="books">Book Library</button>
+        <button class="tab-btn" data-tab="timeline">Timeline</button>
         <button class="tab-btn" data-tab="analysis">Text Analysis</button>
         <button class="tab-btn" data-tab="history">Analysis History</button>
         <button class="tab-btn" data-tab="about">About</button>
@@ -70,6 +71,67 @@
             </div>
 
             <div id="books-grid" class="books-grid"></div>
+        </section>
+
+        <!-- Timeline Tab -->
+        <section id="timeline-tab" class="tab-content">
+            <div class="timeline-container">
+                <div class="timeline-header">
+                    <h2>Literary Timeline: 336 Years of Latino Women's Voices (1689-2025)</h2>
+                    <p class="timeline-description">Explore the chronological journey of Latino women's rhetoric across genres, countries, and theoretical frameworks</p>
+                </div>
+
+                <div class="timeline-controls">
+                    <div class="timeline-filters">
+                        <select id="timeline-genre-filter">
+                            <option value="">All Genres</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="history">History</option>
+                            <option value="biography">Biography</option>
+                            <option value="autobiography">Autobiography</option>
+                            <option value="diaspora">Diaspora</option>
+                            <option value="the body">The Body</option>
+                        </select>
+
+                        <select id="timeline-period-filter">
+                            <option value="">All Periods</option>
+                            <option value="1600-1900">1600-1900: Early Period</option>
+                            <option value="1900-1950">1900-1950: Modern Era</option>
+                            <option value="1950-1980">1950-1980: Civil Rights & Beyond</option>
+                            <option value="1980-2000">1980-2000: Contemporary Wave</option>
+                            <option value="2000-2025">2000-2025: Current Voices</option>
+                        </select>
+
+                        <button id="timeline-reset">Reset View</button>
+                    </div>
+
+                    <div class="timeline-view-options">
+                        <button class="view-btn active" data-view="vertical">Vertical</button>
+                        <button class="view-btn" data-view="grid">Grid</button>
+                    </div>
+                </div>
+
+                <div class="timeline-stats">
+                    <div class="stat-card">
+                        <h3 id="timeline-total">100</h3>
+                        <p>Total Books</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="timeline-years">336</h3>
+                        <p>Years Covered</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="timeline-countries">15+</h3>
+                        <p>Countries</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="timeline-genres">6</h3>
+                        <p>Genres</p>
+                    </div>
+                </div>
+
+                <div id="timeline-display" class="timeline-display vertical-view"></div>
+            </div>
         </section>
 
         <!-- Analysis Tab -->

@@ -840,3 +840,209 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ===== TIMELINE FUNCTIONALITY =====
+
+// Timeline state
+let timelineBooks = [];
+let currentView = 'vertical';
+
+// Timeline DOM elements
+const timelineDisplay = document.getElementById('timeline-display');
+const timelineGenreFilter = document.getElementById('timeline-genre-filter');
+const timelinePeriodFilter = document.getElementById('timeline-period-filter');
+const timelineResetBtn = document.getElementById('timeline-reset');
+const viewButtons = document.querySelectorAll('.view-btn');
+
+// Initialize timeline when tab is clicked
+function initializeTimeline() {
+    if (timelineBooks.length === 0) {
+        timelineBooks = [...allBooks].sort((a, b) => a.year - b.year);
+        renderTimeline(timelineBooks);
+        updateTimelineStats();
+    }
+}
+
+// Setup timeline event listeners
+function setupTimelineListeners() {
+    if (timelineGenreFilter) {
+        timelineGenreFilter.addEventListener('change', filterTimeline);
+    }
+    if (timelinePeriodFilter) {
+        timelinePeriodFilter.addEventListener('change', filterTimeline);
+    }
+    if (timelineResetBtn) {
+        timelineResetBtn.addEventListener('click', resetTimeline);
+    }
+
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentView = btn.dataset.view;
+            viewButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            toggleView(currentView);
+        });
+    });
+}
+
+// Filter timeline
+function filterTimeline() {
+    const selectedGenre = timelineGenreFilter.value.toLowerCase();
+    const selectedPeriod = timelinePeriodFilter.value;
+
+    let filtered = [...allBooks];
+
+    // Apply genre filter
+    if (selectedGenre) {
+        filtered = filtered.filter(book => book.genre.toLowerCase() === selectedGenre);
+    }
+
+    // Apply period filter
+    if (selectedPeriod) {
+        const [startYear, endYear] = selectedPeriod.split('-').map(Number);
+        filtered = filtered.filter(book => book.year >= startYear && book.year <= endYear);
+    }
+
+    // Sort by year
+    filtered.sort((a, b) => a.year - b.year);
+
+    timelineBooks = filtered;
+    renderTimeline(timelineBooks);
+    updateTimelineStats();
+}
+
+// Reset timeline
+function resetTimeline() {
+    timelineGenreFilter.value = '';
+    timelinePeriodFilter.value = '';
+    timelineBooks = [...allBooks].sort((a, b) => a.year - b.year);
+    renderTimeline(timelineBooks);
+    updateTimelineStats();
+}
+
+// Render timeline
+function renderTimeline(books) {
+    if (!timelineDisplay) return;
+
+    if (books.length === 0) {
+        timelineDisplay.innerHTML = '<p class="empty-state">No books found matching your criteria.</p>';
+        return;
+    }
+
+    // Group books by period for headers
+    const periods = groupBooksByPeriod(books);
+
+    let html = '';
+
+    periods.forEach(period => {
+        // Add period header
+        if (currentView === 'vertical') {
+            html += `<div class="timeline-period-header"><h3>${period.name}</h3></div>`;
+        }
+
+        // Add books
+        period.books.forEach((book, index) => {
+            html += createTimelineBookHTML(book, index);
+        });
+    });
+
+    timelineDisplay.innerHTML = html;
+}
+
+// Group books by period
+function groupBooksByPeriod(books) {
+    const periods = [
+        { name: '1600-1900: Early Period', range: [1600, 1900], books: [] },
+        { name: '1900-1950: Modern Era', range: [1900, 1950], books: [] },
+        { name: '1950-1980: Civil Rights & Beyond', range: [1950, 1980], books: [] },
+        { name: '1980-2000: Contemporary Wave', range: [1980, 2000], books: [] },
+        { name: '2000-2025: Current Voices', range: [2000, 2025], books: [] }
+    ];
+
+    books.forEach(book => {
+        for (let period of periods) {
+            if (book.year >= period.range[0] && book.year < period.range[1]) {
+                period.books.push(book);
+                break;
+            }
+        }
+    });
+
+    return periods.filter(p => p.books.length > 0);
+}
+
+// Create timeline book HTML
+function createTimelineBookHTML(book, index) {
+    const genreColors = {
+        'poetry': '9F7AEA',
+        'history': 'F59E0B',
+        'biography': '10B981',
+        'autobiography': 'EF4444',
+        'diaspora': '3B82F6',
+        'the body': 'EC4899'
+    };
+
+    const color = genreColors[book.genre] || '6B7280';
+
+    return `
+        <div class="timeline-item">
+            <span class="timeline-year-marker">${book.year}</span>
+            <div class="timeline-book">
+                <div class="timeline-book-cover" style="background: linear-gradient(135deg, #${color} 0%, #${color}CC 100%);">
+                    <img src="${book.coverImage}" alt="${book.title}" onerror="this.style.display='none'" />
+                </div>
+                <div class="timeline-book-content">
+                    <div class="timeline-book-year">${book.year}</div>
+                    <h4 class="timeline-book-title">${book.title}</h4>
+                    <p class="timeline-book-author">${book.author}</p>
+                    <div class="timeline-book-meta">
+                        <span class="timeline-book-meta-item">🌍 ${book.country}</span>
+                    </div>
+                    <span class="timeline-book-genre">${book.genre}</span>
+                    <div class="timeline-book-themes">
+                        ${book.themes.slice(0, 3).map(theme =>
+                            `<span class="timeline-book-theme">${theme}</span>`
+                        ).join('')}
+                        ${book.themes.length > 3 ?
+                            `<span class="timeline-book-theme">+${book.themes.length - 3} more</span>` : ''}
+                    </div>
+                    <p class="timeline-book-abstract">${book.abstract}</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Toggle view
+function toggleView(view) {
+    if (!timelineDisplay) return;
+
+    timelineDisplay.classList.remove('vertical-view', 'grid-view');
+    timelineDisplay.classList.add(`${view}-view`);
+}
+
+// Update timeline stats
+function updateTimelineStats() {
+    const totalBooks = timelineBooks.length;
+    const years = timelineBooks.map(b => b.year);
+    const yearsSpan = years.length > 0 ? Math.max(...years) - Math.min(...years) : 0;
+    const countries = new Set(timelineBooks.map(b => b.country)).size;
+    const genres = new Set(timelineBooks.map(b => b.genre)).size;
+
+    document.getElementById('timeline-total').textContent = totalBooks;
+    document.getElementById('timeline-years').textContent = yearsSpan;
+    document.getElementById('timeline-countries').textContent = countries + '+';
+    document.getElementById('timeline-genres').textContent = genres;
+}
+
+// Initialize timeline listeners
+setupTimelineListeners();
+
+// Modify switchTab function to initialize timeline
+const originalSwitchTab = switchTab;
+window.switchTab = function(tabName) {
+    originalSwitchTab(tabName);
+    if (tabName === 'timeline') {
+        initializeTimeline();
+    }
+};
