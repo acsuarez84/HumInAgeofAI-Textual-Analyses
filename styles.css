@@ -935,6 +935,23 @@ body.high-contrast .timeline-book-title a {
     margin-bottom: 1.5rem;
 }
 
+/* Network Visualization */
+#network-visualization {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+#network-visualization canvas {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+}
+
 /* Visualization Container */
 #visualization-container {
     background-color: var(--bg-secondary);

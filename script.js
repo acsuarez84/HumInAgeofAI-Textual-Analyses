@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadHistoryFromStorage();
     loadDraftFromStorage();
+
+    // Set About tab as active by default
+    switchTab('about');
 });
 
 // Load Books from JSON
@@ -249,6 +252,9 @@ function toggleBookSelection(bookId) {
 
     updateSelectedBooksDisplay();
     renderAnalysisBooks(allBooks);
+
+    // Auto-generate analysis if we have text and books selected
+    autoGenerateAnalysis();
 }
 
 function updateSelectedBooksDisplay() {
@@ -553,8 +559,12 @@ function identifyLimitations(text, books, connections) {
 // Display Analysis Results
 function displayAnalysisResults(analysis) {
     // Clear previous results
+    const networkViz = document.getElementById('network-visualization');
     visualizationContainer.innerHTML = '';
     analysisText.innerHTML = '';
+
+    // Create network visualization
+    createSemanticWebMap(analysis, networkViz);
 
     // Display connections
     let connectionsHTML = '<h4>Connections Found</h4>';
@@ -1630,3 +1640,396 @@ function announceToScreenReader(message) {
 
 // Initialize accessibility on page load
 initializeAccessibility();
+
+// ===== SEMANTIC WEB MAP VISUALIZATION =====
+
+function createSemanticWebMap(analysis, container) {
+    // Create canvas
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    const width = container.clientWidth || 800;
+    const height = 500;
+    canvas.width = width;
+    canvas.height = height;
+
+    container.innerHTML = '';
+    container.appendChild(canvas);
+
+    // Create nodes for visualization
+    const nodes = [];
+
+    // Central node - user's text
+    nodes.push({
+        id: 'user-text',
+        label: 'Your Text',
+        x: width / 2,
+        y: height / 2,
+        radius: 30,
+        color: '#6B46C1',
+        type: 'center'
+    });
+
+    // Add book nodes
+    const bookCount = analysis.books.length;
+    const angleStep = (2 * Math.PI) / bookCount;
+    const bookRadius = Math.min(width, height) * 0.3;
+
+    analysis.books.forEach((book, i) => {
+        const angle = i * angleStep;
+        const x = width / 2 + Math.cos(angle) * bookRadius;
+        const y = height / 2 + Math.sin(angle) * bookRadius;
+
+        nodes.push({
+            id: `book-${book.id}`,
+            label: book.title.length > 30 ? book.title.substring(0, 27) + '...' : book.title,
+            author: book.author,
+            year: book.year,
+            x: x,
+            y: y,
+            radius: 20,
+            color: '#D946A6',
+            type: 'book'
+        });
+    });
+
+    // Add theme nodes
+    const themes = new Set();
+    analysis.connections.themes.forEach(conn => themes.add(conn.theme));
+    const themeArray = Array.from(themes).slice(0, 8); // Limit to 8 themes
+    const themeAngleStep = (2 * Math.PI) / themeArray.length;
+    const themeRadius = Math.min(width, height) * 0.42;
+
+    themeArray.forEach((theme, i) => {
+        const angle = i * themeAngleStep + Math.PI / 4;
+        const x = width / 2 + Math.cos(angle) * themeRadius;
+        const y = height / 2 + Math.sin(angle) * themeRadius;
+
+        nodes.push({
+            id: `theme-${theme}`,
+            label: theme,
+            x: x,
+            y: y,
+            radius: 15,
+            color: '#F59E0B',
+            type: 'theme'
+        });
+    });
+
+    // Create connections (edges)
+    const edges = [];
+
+    // Connect user text to all books
+    analysis.books.forEach(book => {
+        edges.push({
+            from: 'user-text',
+            to: `book-${book.id}`,
+            strength: 1,
+            color: 'rgba(107, 70, 193, 0.3)'
+        });
+    });
+
+    // Connect books to themes
+    analysis.connections.themes.forEach(conn => {
+        edges.push({
+            from: `book-${analysis.books.find(b => b.title === conn.book)?.id}`,
+            to: `theme-${conn.theme}`,
+            strength: 0.5,
+            color: 'rgba(245, 158, 11, 0.2)'
+        });
+    });
+
+    // Animation variables
+    let animationFrame = 0;
+    let hoveredNode = null;
+
+    // Mouse interaction
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        hoveredNode = null;
+        for (const node of nodes) {
+            const dx = mouseX - node.x;
+            const dy = mouseY - node.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < node.radius) {
+                hoveredNode = node;
+                canvas.style.cursor = 'pointer';
+                break;
+            }
+        }
+
+        if (!hoveredNode) {
+            canvas.style.cursor = 'default';
+        }
+
+        draw();
+    });
+
+    // Draw function
+    function draw() {
+        // Clear canvas
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw edges
+        edges.forEach(edge => {
+            const fromNode = nodes.find(n => n.id === edge.from);
+            const toNode = nodes.find(n => n.id === edge.to);
+
+            if (fromNode && toNode) {
+                ctx.beginPath();
+                ctx.moveTo(fromNode.x, fromNode.y);
+                ctx.lineTo(toNode.x, toNode.y);
+                ctx.strokeStyle = edge.color;
+                ctx.lineWidth = edge.strength * 2;
+                ctx.stroke();
+            }
+        });
+
+        // Draw nodes
+        nodes.forEach(node => {
+            const isHovered = hoveredNode === node;
+
+            // Draw node circle
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.radius + (isHovered ? 5 : 0), 0, 2 * Math.PI);
+            ctx.fillStyle = node.color;
+            ctx.fill();
+
+            // Add glow for hovered node
+            if (isHovered) {
+                ctx.strokeStyle = node.color;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            }
+
+            // Draw border
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw label
+            ctx.fillStyle = '#1F2937';
+            ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            if (node.type === 'center') {
+                ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+                ctx.fillStyle = '#FFFFFF';
+            }
+
+            // Wrap text for long labels
+            const maxWidth = node.radius * 2.5;
+            const words = node.label.split(' ');
+            let line = '';
+            let yOffset = 0;
+
+            if (words.length === 1 || node.label.length < 20) {
+                ctx.fillText(node.label, node.x, node.y + node.radius + 15);
+            } else {
+                words.forEach((word, i) => {
+                    const testLine = line + word + ' ';
+                    const metrics = ctx.measureText(testLine);
+
+                    if (metrics.width > maxWidth && i > 0) {
+                        ctx.fillText(line, node.x, node.y + node.radius + 15 + yOffset);
+                        line = word + ' ';
+                        yOffset += 15;
+                    } else {
+                        line = testLine;
+                    }
+                });
+                ctx.fillText(line, node.x, node.y + node.radius + 15 + yOffset);
+            }
+
+            // Show additional info on hover
+            if (isHovered && node.type === 'book') {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                ctx.fillRect(node.x - 100, node.y - 60, 200, 50);
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+                ctx.fillText(node.label, node.x, node.y - 45);
+                ctx.fillText(node.author, node.x, node.y - 30);
+                ctx.fillText(`Year: ${node.year}`, node.x, node.y - 15);
+            }
+        });
+
+        // Add legend
+        drawLegend(ctx, width, height);
+    }
+
+    // Draw legend
+    function drawLegend(ctx, width, height) {
+        const legendX = 20;
+        const legendY = height - 80;
+
+        // Background
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.fillRect(legendX - 10, legendY - 10, 150, 70);
+        ctx.strokeStyle = '#E5E7EB';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(legendX - 10, legendY - 10, 150, 70);
+
+        // Legend items
+        const legendItems = [
+            { color: '#6B46C1', label: 'Your Text' },
+            { color: '#D946A6', label: 'Books' },
+            { color: '#F59E0B', label: 'Themes' }
+        ];
+
+        legendItems.forEach((item, i) => {
+            ctx.beginPath();
+            ctx.arc(legendX + 10, legendY + i * 20, 6, 0, 2 * Math.PI);
+            ctx.fillStyle = item.color;
+            ctx.fill();
+
+            ctx.fillStyle = '#1F2937';
+            ctx.font = '12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(item.label, legendX + 25, legendY + i * 20 + 4);
+        });
+    }
+
+    // Initial draw
+    draw();
+
+    // Animate connections
+    function animate() {
+        animationFrame++;
+        if (animationFrame % 60 === 0) { // Subtle animation every second
+            draw();
+        }
+        requestAnimationFrame(animate);
+    }
+
+    // Don't start animation to keep it simple and performant
+    // animate();
+}
+
+// ===== AUTO-ANALYSIS FUNCTIONALITY =====
+
+let autoAnalysisTimeout = null;
+
+function autoGenerateAnalysis() {
+    // Clear any pending auto-analysis
+    if (autoAnalysisTimeout) {
+        clearTimeout(autoAnalysisTimeout);
+    }
+
+    // Only auto-generate if we have text and selected books
+    const text = userText.value.trim();
+    if (!text || selectedBooksForAnalysis.length === 0) {
+        return;
+    }
+
+    // Show notification that analysis is being prepared
+    showAutoAnalysisNotification();
+
+    // Debounce the analysis generation
+    autoAnalysisTimeout = setTimeout(() => {
+        // Get selected analysis options
+        const options = {
+            themes: document.getElementById('theme-analysis').checked,
+            theory: document.getElementById('theory-analysis').checked,
+            temporal: document.getElementById('temporal-analysis').checked,
+            geographic: document.getElementById('geographic-analysis').checked,
+            genre: document.getElementById('genre-analysis').checked,
+            linguistic: document.getElementById('linguistic-analysis').checked
+        };
+
+        // Perform analysis
+        const analysis = performSemanticAnalysis(text, selectedBooksForAnalysis, options);
+
+        // Display results
+        displayAnalysisResults(analysis);
+
+        // Save to history
+        saveToHistory(text, selectedBooksForAnalysis, analysis);
+
+        // Show results section
+        analysisResults.classList.add('show');
+
+        // Show completion notification
+        showNotification('📊 Semantic analysis automatically generated!', 'success');
+
+        // Scroll to results
+        analysisResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 1500); // Wait 1.5 seconds after last selection
+}
+
+function showAutoAnalysisNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'auto-analysis-notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">🔄</span>
+            <span class="notification-text">Preparing semantic analysis...</span>
+        </div>
+    `;
+
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #6B46C1 0%, #D946A6 100%);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        animation: slideInUp 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 1200);
+}
+
+// Add animation styles for auto-analysis notification
+const autoAnalysisStyle = document.createElement('style');
+autoAnalysisStyle.textContent = `
+    @keyframes slideInUp {
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .auto-analysis-notification .notification-icon {
+        font-size: 1.25rem;
+        animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .notification-content {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .notification-text {
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+`;
+document.head.appendChild(autoAnalysisStyle);
