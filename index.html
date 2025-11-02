@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM & Latino Women Rhetoric Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <div id="accessibility-bar" class="accessibility-bar">
+        <div class="accessibility-controls">
+            <button id="high-contrast-toggle" class="accessibility-btn" title="Toggle High Contrast Mode">
+                <span class="icon">◐</span> High Contrast
+            </button>
+            <button id="font-size-increase" class="accessibility-btn" title="Increase Font Size">
+                <span class="icon">A+</span>
+            </button>
+            <button id="font-size-decrease" class="accessibility-btn" title="Decrease Font Size">
+                <span class="icon">A-</span>
+            </button>
+            <button id="text-to-speech-toggle" class="accessibility-btn" title="Enable Text-to-Speech">
+                <span class="icon">🔊</span> <span id="tts-label">Enable Reading</span>
+            </button>
+            <button id="reset-accessibility" class="accessibility-btn" title="Reset Accessibility Settings">
+                <span class="icon">↺</span> Reset
+            </button>
+        </div>
+    </div>
+
+    <header>
+        <h1>LLM & Latino Women Rhetoric Tracker</h1>
+        <p class="subtitle">Exploring Enhancements and Limitations of LLMs on Latino Women's Rhetoric Through Textual Analysis</p>
+        <p class="description">A century of textual analyses spanning poetry, history, biographies, autobiographies, diasporas, and embodied narratives through theories of grammar, culture, rhetorical listening, multiliteracies, multimodalities, media, transfer, translingualism, and transliteration.</p>
+    </header>
+
+    <nav class="tab-navigation">
+        <button class="tab-btn active" data-tab="books">Book Library</button>
+        <button class="tab-btn" data-tab="timeline">Timeline</button>
+        <button class="tab-btn" data-tab="analysis">Text Analysis</button>
+        <button class="tab-btn" data-tab="history">Analysis History</button>
+        <button class="tab-btn" data-tab="about">About</button>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="introduction-section">
+        <div class="intro-container">
+            <h2 class="intro-title">Welcome to the LLM & Latino Women Rhetoric Tracker</h2>
+
+            <div class="intro-content">
+                <div class="intro-card">
+                    <h3>🎯 What is This Website?</h3>
+                    <p>This is an interactive digital humanities platform designed to explore both the <strong>enhancements and limitations</strong> of Large Language Models (LLMs) in analyzing Latino women's rhetoric. The site features:</p>
+                    <ul>
+                        <li><strong>100 Curated Books</strong> spanning 336 years (1689-2025)</li>
+                        <li><strong>200+ Language Translation</strong> with quality analysis</li>
+                        <li><strong>Interactive Timeline</strong> visualizing literary history</li>
+                        <li><strong>Semantic Analysis Tools</strong> for comparing your writing with established works</li>
+                        <li><strong>Theoretical Framework Mapping</strong> across 9 scholarly approaches</li>
+                    </ul>
+                </div>
+
+                <div class="intro-card">
+                    <h3>📚 How to Use This Site</h3>
+                    <ol class="usage-steps">
+                        <li>
+                            <strong>Explore the Library</strong>
+                            <p>Browse 100 books using filters for genre, theory, and time period. Each book includes metadata on themes, theoretical connections, and cultural context.</p>
+                        </li>
+                        <li>
+                            <strong>View the Timeline</strong>
+                            <p>Visualize 336 years of Latino women's literary history with interactive chronological displays and period groupings.</p>
+                        </li>
+                        <li>
+                            <strong>Analyze Your Text</strong>
+                            <p>Enter your writing in any of 200+ languages, translate to English, and generate semantic maps showing connections to selected books.</p>
+                        </li>
+                        <li>
+                            <strong>Review Quality Analysis</strong>
+                            <p>Examine translation quality with grammar, structure, and meaning assessments. Compare your text thematically and theoretically with the corpus.</p>
+                        </li>
+                        <li>
+                            <strong>Access Your History</strong>
+                            <p>Save and retrieve up to 50 previous analyses. Export your research for further study.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="intro-card">
+                    <h3>♿ Accessibility Features</h3>
+                    <p>This website is designed to be accessible to all users:</p>
+                    <ul>
+                        <li><strong>High Contrast Mode:</strong> Black background with white text for users with color impairments</li>
+                        <li><strong>Text-to-Speech:</strong> Click any text to have it read aloud for visually impaired users</li>
+                        <li><strong>Font Size Controls:</strong> Increase or decrease text size as needed</li>
+                        <li><strong>Keyboard Navigation:</strong> Full keyboard support throughout the site</li>
+                        <li><strong>Screen Reader Compatible:</strong> Semantic HTML for assistive technologies</li>
+                    </ul>
+                    <p class="accessibility-note">Use the accessibility controls at the top of the page to customize your experience.</p>
+                </div>
+
+                <div class="intro-card highlight">
+                    <h3>🚀 Getting Started</h3>
+                    <p><strong>New users:</strong> Click the tabs above to explore different features:</p>
+                    <div class="tab-guide">
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">📖</span>
+                            <strong>Book Library:</strong> Browse the collection
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">📅</span>
+                            <strong>Timeline:</strong> Explore chronologically
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">✍️</span>
+                            <strong>Text Analysis:</strong> Analyze your writing
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">📊</span>
+                            <strong>History:</strong> View saved analyses
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">ℹ️</span>
+                            <strong>About:</strong> Learn more details
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="close-intro" class="close-intro-btn">Continue to Book Library →</button>
+        </div>
+    </section>
+
+    <main>
+        <!-- Books Tab -->
+        <section id="books-tab" class="tab-content active">
+            <div class="controls">
+                <div class="search-filter">
+                    <input type="text" id="search-input" placeholder="Search books by title, author, or theme...">
+
+                    <div class="filters">
+                        <select id="genre-filter">
+                            <option value="">All Genres</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="history">History</option>
+                            <option value="biography">Biography</option>
+                            <option value="autobiography">Autobiography</option>
+                            <option value="diaspora">Diaspora</option>
+                            <option value="the body">The Body</option>
+                        </select>
+
+                        <select id="theory-filter">
+                            <option value="">All Theories</option>
+                            <option value="grammar">Grammar</option>
+                            <option value="culture">Culture</option>
+                            <option value="rhetorical listening">Rhetorical Listening</option>
+                            <option value="multiliteracies">Multiliteracies</option>
+                            <option value="multimodalities">Multimodalities</option>
+                            <option value="media">Media</option>
+                            <option value="transfer">Transfer</option>
+                            <option value="translingualism">Translingualism</option>
+                            <option value="transliteration">Transliteration</option>
+                        </select>
+
+                        <select id="year-filter">
+                            <option value="">All Years</option>
+                            <option value="1600-1900">1600-1900</option>
+                            <option value="1900-1950">1900-1950</option>
+                            <option value="1950-1980">1950-1980</option>
+                            <option value="1980-2000">1980-2000</option>
+                            <option value="2000-2025">2000-2025</option>
+                        </select>
+
+                        <button id="clear-filters">Clear Filters</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <p>Showing <span id="book-count">0</span> of 100 books</p>
+            </div>
+
+            <div id="books-grid" class="books-grid"></div>
+        </section>
+
+        <!-- Timeline Tab -->
+        <section id="timeline-tab" class="tab-content">
+            <div class="timeline-container">
+                <div class="timeline-header">
+                    <h2>Literary Timeline: 336 Years of Latino Women's Voices (1689-2025)</h2>
+                    <p class="timeline-description">Explore the chronological journey of Latino women's rhetoric across genres, countries, and theoretical frameworks</p>
+                </div>
+
+                <div class="timeline-controls">
+                    <div class="timeline-filters">
+                        <select id="timeline-genre-filter">
+                            <option value="">All Genres</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="history">History</option>
+                            <option value="biography">Biography</option>
+                            <option value="autobiography">Autobiography</option>
+                            <option value="diaspora">Diaspora</option>
+                            <option value="the body">The Body</option>
+                        </select>
+
+                        <select id="timeline-period-filter">
+                            <option value="">All Periods</option>
+                            <option value="1600-1900">1600-1900: Early Period</option>
+                            <option value="1900-1950">1900-1950: Modern Era</option>
+                            <option value="1950-1980">1950-1980: Civil Rights & Beyond</option>
+                            <option value="1980-2000">1980-2000: Contemporary Wave</option>
+                            <option value="2000-2025">2000-2025: Current Voices</option>
+                        </select>
+
+                        <button id="timeline-reset">Reset View</button>
+                    </div>
+
+                    <div class="timeline-view-options">
+                        <button class="view-btn active" data-view="vertical">Vertical</button>
+                        <button class="view-btn" data-view="grid">Grid</button>
+                    </div>
+                </div>
+
+                <div class="timeline-stats">
+                    <div class="stat-card">
+                        <h3 id="timeline-total">100</h3>
+                        <p>Total Books</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="timeline-years">336</h3>
+                        <p>Years Covered</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="timeline-countries">15+</h3>
+                        <p>Countries</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="timeline-genres">6</h3>
+                        <p>Genres</p>
+                    </div>
+                </div>
+
+                <div id="timeline-display" class="timeline-display vertical-view"></div>
+            </div>
+        </section>
+
+        <!-- Analysis Tab -->
+        <section id="analysis-tab" class="tab-content">
+            <div class="analysis-container">
+                <div class="text-input-section">
+                    <h2>Your Text Input</h2>
+                    <p class="instruction">Enter your original writing, abstracts, or excerpts for semantic analysis:</p>
+
+                    <div class="translation-controls">
+                        <div class="translation-selector">
+                            <label for="source-language">Source Language:</label>
+                            <select id="source-language">
+                                <option value="auto">Auto-Detect</option>
+                            </select>
+                        </div>
+                        <button id="translate-btn" class="translate-btn">🌐 Translate to English</button>
+                        <button id="toggle-translation-view" class="toggle-btn">↔️ Toggle Side-by-Side</button>
+                    </div>
+
+                    <div id="text-input-container" class="text-input-container single-view">
+                        <div class="text-box-wrapper">
+                            <div class="text-box-header">
+                                <span id="original-lang-label">Original Text</span>
+                                <span id="char-count">0 characters</span>
+                            </div>
+                            <textarea id="user-text" placeholder="Paste or type your text here in any of 200+ languages..."></textarea>
+                        </div>
+
+                        <div class="text-box-wrapper translation-box">
+                            <div class="text-box-header">
+                                <span>English Translation</span>
+                                <span id="translation-status"></span>
+                            </div>
+                            <textarea id="translated-text" placeholder="Translation will appear here..." readonly></textarea>
+                        </div>
+                    </div>
+
+                    <div id="translation-analysis" class="translation-analysis" style="display: none;">
+                        <h3>Translation Quality Analysis</h3>
+                        <div class="analysis-grid">
+                            <div class="analysis-category">
+                                <h4>📝 Grammar</h4>
+                                <ul id="grammar-analysis"></ul>
+                            </div>
+                            <div class="analysis-category">
+                                <h4>🏗️ Structure</h4>
+                                <ul id="structure-analysis"></ul>
+                            </div>
+                            <div class="analysis-category">
+                                <h4>💭 Meaning</h4>
+                                <ul id="meaning-analysis"></ul>
+                            </div>
+                        </div>
+                        <div class="quality-indicator">
+                            <span>Overall Quality: </span>
+                            <span id="quality-score" class="quality-badge">-</span>
+                        </div>
+                    </div>
+
+                    <div class="text-controls">
+                        <button id="clear-text">Clear Text</button>
+                        <button id="save-draft">Save Draft</button>
+                        <button id="load-draft">Load Draft</button>
+                    </div>
+                </div>
+
+                <div class="book-selection-section">
+                    <h2>Select Books for Comparison</h2>
+                    <p class="instruction">Choose books to analyze alongside your text:</p>
+
+                    <div class="quick-search">
+                        <input type="text" id="analysis-search" placeholder="Search books...">
+                    </div>
+
+                    <div id="selected-books" class="selected-books">
+                        <p class="empty-state">No books selected. Search and click books to add them.</p>
+                    </div>
+
+                    <div id="analysis-book-list" class="analysis-book-list"></div>
+                </div>
+
+                <div class="analysis-options">
+                    <h3>Analysis Parameters</h3>
+                    <div class="options-grid">
+                        <label>
+                            <input type="checkbox" id="theme-analysis" checked>
+                            Theme Analysis
+                        </label>
+                        <label>
+                            <input type="checkbox" id="theory-analysis" checked>
+                            Theoretical Framework Analysis
+                        </label>
+                        <label>
+                            <input type="checkbox" id="temporal-analysis" checked>
+                            Temporal/Historical Context
+                        </label>
+                        <label>
+                            <input type="checkbox" id="geographic-analysis" checked>
+                            Geographic/Cultural Context
+                        </label>
+                        <label>
+                            <input type="checkbox" id="genre-analysis" checked>
+                            Genre Analysis
+                        </label>
+                        <label>
+                            <input type="checkbox" id="linguistic-analysis" checked>
+                            Linguistic Analysis
+                        </label>
+                    </div>
+                </div>
+
+                <button id="generate-analysis" class="primary-btn">Generate Semantic Map</button>
+
+                <div id="analysis-results" class="analysis-results">
+                    <h3>Semantic Map</h3>
+                    <div id="visualization-container"></div>
+                    <div id="analysis-text" class="analysis-text"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Tab -->
+        <section id="history-tab" class="tab-content">
+            <div class="history-container">
+                <div class="history-header">
+                    <h2>Analysis History</h2>
+                    <div class="history-controls">
+                        <button id="clear-history">Clear All History</button>
+                        <button id="export-history">Export History</button>
+                    </div>
+                </div>
+
+                <div id="history-list" class="history-list">
+                    <p class="empty-state">No analysis history yet. Generate your first semantic map!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Tab -->
+        <section id="about-tab" class="tab-content">
+            <div class="about-container">
+                <h2>About This Project</h2>
+
+                <section class="about-section">
+                    <h3>Purpose</h3>
+                    <p>This tracking website explores both the enhancements and limitations of Large Language Models (LLMs) in analyzing Latino women's rhetoric through textual analysis. By examining 100 works spanning a century of literature across multiple genres and theoretical frameworks, we can better understand how AI technologies engage with culturally and linguistically diverse texts.</p>
+                </section>
+
+                <section class="about-section">
+                    <h3>Genres Covered</h3>
+                    <ul>
+                        <li><strong>Poetry:</strong> Verse, spoken word, and lyrical works</li>
+                        <li><strong>History:</strong> Historical analyses and documentations</li>
+                        <li><strong>Biographies:</strong> Life stories of significant figures</li>
+                        <li><strong>Autobiographies:</strong> Self-narratives and memoirs</li>
+                        <li><strong>Diasporas:</strong> Works exploring migration and displacement</li>
+                        <li><strong>The Body:</strong> Explorations of embodiment and corporeality</li>
+                    </ul>
+                </section>
+
+                <section class="about-section">
+                    <h3>Theoretical Frameworks</h3>
+                    <ul>
+                        <li><strong>Grammar:</strong> Linguistic structures and conventions</li>
+                        <li><strong>Culture:</strong> Cultural context and production</li>
+                        <li><strong>Rhetorical Listening:</strong> Listening across difference</li>
+                        <li><strong>Multiliteracies:</strong> Multiple modes of meaning-making</li>
+                        <li><strong>Multimodalities:</strong> Diverse communicative modes</li>
+                        <li><strong>Media:</strong> Media production and circulation</li>
+                        <li><strong>Transfer:</strong> Knowledge transfer across contexts</li>
+                        <li><strong>Translingualism:</strong> Language diversity and fluidity</li>
+                        <li><strong>Transliteration:</strong> Cross-script representation</li>
+                    </ul>
+                </section>
+
+                <section class="about-section">
+                    <h3>How to Use</h3>
+                    <ol>
+                        <li><strong>Explore the Library:</strong> Browse 100 curated books using filters for genre, theory, and time period</li>
+                        <li><strong>Input Your Text:</strong> Enter your original writing, excerpts, or abstracts in the Analysis tab</li>
+                        <li><strong>Select Books:</strong> Choose books to compare with your text</li>
+                        <li><strong>Generate Analysis:</strong> Create a semantic map showing connections between your text and selected works</li>
+                        <li><strong>Review History:</strong> Access previous analyses to track patterns and insights over time</li>
+                    </ol>
+                </section>
+
+                <section class="about-section">
+                    <h3>Data Privacy</h3>
+                    <p>All data is stored locally in your browser using local storage. No information is sent to external servers. Your analyses and text inputs remain private on your device.</p>
+                </section>
+
+                <section class="about-section">
+                    <h3>Technical Details</h3>
+                    <p>This website uses HTML, CSS, and JavaScript to create an interactive interface for exploring Latino women's rhetoric. The semantic mapping functionality demonstrates how computational analysis can reveal connections across texts, while also highlighting areas where LLM understanding may be limited or enhanced.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LLM & Latino Women Rhetoric Tracker | <a href="https://github.com/acsuarez84/HumInAgeofAI-Textual-Analyses" target="_blank">View on GitHub</a></p>
+    </footer>
+
+    <script src="translation-service.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

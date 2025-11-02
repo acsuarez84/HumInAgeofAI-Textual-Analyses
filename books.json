@@ -1,0 +1,2202 @@
+[
+  {
+    "id": 1,
+    "title": "Borderlands/La Frontera: The New Mestiza",
+    "author": "Gloria Anzaldúa",
+    "year": 1987,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "identity",
+      "border consciousness",
+      "mestiza consciousness",
+      "chicana feminism",
+      "hybridity"
+    ],
+    "connectingTheory": [
+      "translingualism",
+      "culture",
+      "multimodalities"
+    ],
+    "abstract": "A groundbreaking work combining autobiography, poetry, and theory to explore the physical and metaphorical borderlands between cultures, languages, and identities.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Borderlands%2FLa%20Frontera%3A%20The%20N"
+  },
+  {
+    "id": 2,
+    "title": "The House on Mango Street",
+    "author": "Sandra Cisneros",
+    "year": 1984,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "coming of age",
+      "latina identity",
+      "urban life",
+      "gender",
+      "community"
+    ],
+    "connectingTheory": [
+      "multiliteracies",
+      "culture",
+      "rhetorical listening"
+    ],
+    "abstract": "A series of vignettes depicting the life of Esperanza Cordero, a young Chicana girl growing up in Chicago, exploring themes of identity, belonging, and self-determination.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=The%20House%20on%20Mango%20Street"
+  },
+  {
+    "id": 3,
+    "title": "When I Was Puerto Rican",
+    "author": "Esmeralda Santiago",
+    "year": 1993,
+    "country": "Puerto Rico",
+    "genre": "autobiography",
+    "themes": [
+      "migration",
+      "cultural identity",
+      "childhood",
+      "poverty",
+      "education"
+    ],
+    "connectingTheory": [
+      "transfer",
+      "translingualism",
+      "culture"
+    ],
+    "abstract": "A memoir chronicling Santiago's childhood in rural Puerto Rico and her family's migration to New York, navigating between two cultures and languages.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=When%20I%20Was%20Puerto%20Rican"
+  },
+  {
+    "id": 4,
+    "title": "In the Time of the Butterflies",
+    "author": "Julia Alvarez",
+    "year": 1994,
+    "country": "Dominican Republic",
+    "genre": "history",
+    "themes": [
+      "resistance",
+      "dictatorship",
+      "feminism",
+      "martyrdom",
+      "family"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "Historical novel about the Mirabal sisters who resisted the Trujillo dictatorship in the Dominican Republic, exploring themes of courage, resistance, and sacrifice.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=In%20the%20Time%20of%20the%20Butterflies"
+  },
+  {
+    "id": 5,
+    "title": "Woman Hollering Creek",
+    "author": "Sandra Cisneros",
+    "year": 1991,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "domestic violence",
+      "mythology",
+      "border life",
+      "empowerment",
+      "tradition"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A collection of short stories exploring the lives of Latina women on both sides of the Mexico-Texas border, weaving together myth, history, and contemporary struggles.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Woman%20Hollering%20Creek"
+  },
+  {
+    "id": 6,
+    "title": "Dreaming in Cuban",
+    "author": "Cristina García",
+    "year": 1992,
+    "country": "Cuba",
+    "genre": "diaspora",
+    "themes": [
+      "exile",
+      "family",
+      "revolution",
+      "memory",
+      "generational conflict"
+    ],
+    "connectingTheory": [
+      "transfer",
+      "culture",
+      "multiliteracies"
+    ],
+    "abstract": "A multi-generational saga following a Cuban family divided by revolution and exile, exploring themes of memory, identity, and the complexities of the Cuban-American experience.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Dreaming%20in%20Cuban"
+  },
+  {
+    "id": 7,
+    "title": "How the García Girls Lost Their Accents",
+    "author": "Julia Alvarez",
+    "year": 1991,
+    "country": "Dominican Republic",
+    "genre": "diaspora",
+    "themes": [
+      "assimilation",
+      "language loss",
+      "cultural identity",
+      "gender",
+      "immigration"
+    ],
+    "connectingTheory": [
+      "translingualism",
+      "transfer",
+      "culture"
+    ],
+    "abstract": "Chronicling the García family's migration from Dominican Republic to the United States, told in reverse chronology, exploring the complexities of cultural assimilation and identity formation.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=How%20the%20Garc%C3%ADa%20Girls%20Lost%20Thei"
+  },
+  {
+    "id": 8,
+    "title": "Loving in the War Years",
+    "author": "Cherríe Moraga",
+    "year": 1983,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "lesbian identity",
+      "chicana feminism",
+      "sexuality",
+      "racism",
+      "class"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A collection of poetry and prose exploring the intersections of race, class, gender, and sexuality from a Chicana lesbian feminist perspective.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Loving%20in%20the%20War%20Years"
+  },
+  {
+    "id": 9,
+    "title": "The Brief Wondrous Life of Oscar Wao",
+    "author": "Junot Díaz",
+    "year": 2007,
+    "country": "Dominican Republic",
+    "genre": "diaspora",
+    "themes": [
+      "fukú",
+      "diaspora",
+      "masculinity",
+      "nerd culture",
+      "dictatorship"
+    ],
+    "connectingTheory": [
+      "translingualism",
+      "culture",
+      "multimodalities"
+    ],
+    "abstract": "A multi-generational story of a Dominican-American family cursed by fukú, blending history, pop culture, and Dominican folklore.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=The%20Brief%20Wondrous%20Life%20of%20Osc"
+  },
+  {
+    "id": 10,
+    "title": "The Distance Between Us",
+    "author": "Reyna Grande",
+    "year": 2012,
+    "country": "Mexico",
+    "genre": "autobiography",
+    "themes": [
+      "immigration",
+      "family separation",
+      "poverty",
+      "resilience",
+      "education"
+    ],
+    "connectingTheory": [
+      "transfer",
+      "translingualism",
+      "culture"
+    ],
+    "abstract": "A memoir about growing up on both sides of the U.S.-Mexico border, dealing with poverty, abandonment, and the pursuit of the American Dream.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=The%20Distance%20Between%20Us"
+  },
+  {
+    "id": 11,
+    "title": "This Bridge Called My Back",
+    "author": "Cherríe Moraga and Gloria Anzaldúa (eds.)",
+    "year": 1981,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "feminism of color",
+      "intersectionality",
+      "activism",
+      "solidarity",
+      "coalition"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A groundbreaking anthology of writings by radical women of color, exploring the intersections of race, class, gender, and sexuality.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=This%20Bridge%20Called%20My%20Back"
+  },
+  {
+    "id": 12,
+    "title": "Caramelo",
+    "author": "Sandra Cisneros",
+    "year": 2002,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "family history",
+      "storytelling",
+      "Mexico-US relations",
+      "memory",
+      "tradition"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multiliteracies"
+    ],
+    "abstract": "A sweeping family saga told through the voice of Celaya 'Lala' Reyes, weaving together family history, Mexican culture, and the immigrant experience.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Caramelo"
+  },
+  {
+    "id": 13,
+    "title": "Sor Juana's Love Poems",
+    "author": "Sor Juana Inés de la Cruz",
+    "year": 1689,
+    "country": "Mexico",
+    "genre": "poetry",
+    "themes": [
+      "intellectualism",
+      "colonial period",
+      "gender",
+      "religious life",
+      "love"
+    ],
+    "connectingTheory": [
+      "grammar",
+      "culture",
+      "transliteration"
+    ],
+    "abstract": "Poetry by the 17th-century Mexican nun and scholar, exploring themes of love, knowledge, and gender in colonial New Spain.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Sor%20Juana's%20Love%20Poems"
+  },
+  {
+    "id": 14,
+    "title": "Yo-Yo Boing!",
+    "author": "Giannina Braschi",
+    "year": 1998,
+    "country": "Puerto Rico",
+    "genre": "poetry",
+    "themes": [
+      "code-switching",
+      "linguistic experimentation",
+      "postmodernism",
+      "identity",
+      "hybridity"
+    ],
+    "connectingTheory": [
+      "translingualism",
+      "multimodalities",
+      "grammar"
+    ],
+    "abstract": "An experimental novel written in a mix of Spanish and English, exploring Puerto Rican identity through innovative linguistic and formal strategies.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Yo-Yo%20Boing!"
+  },
+  {
+    "id": 15,
+    "title": "Massacre of the Dreamers",
+    "author": "Ana Castillo",
+    "year": 1994,
+    "country": "United States",
+    "genre": "history",
+    "themes": [
+      "chicana feminism",
+      "spirituality",
+      "activism",
+      "mestiza identity",
+      "theory"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "An exploration of Chicana feminist consciousness, blending personal narrative, history, and theoretical analysis.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Massacre%20of%20the%20Dreamers"
+  },
+  {
+    "id": 16,
+    "title": "The Book of Salt",
+    "author": "Monique Truong",
+    "year": 2003,
+    "country": "Vietnam",
+    "genre": "biography",
+    "themes": [
+      "exile",
+      "colonialism",
+      "queer identity",
+      "culinary arts",
+      "displacement"
+    ],
+    "connectingTheory": [
+      "translingualism",
+      "culture",
+      "diaspora"
+    ],
+    "abstract": "A novel about Bình, a Vietnamese cook working for Gertrude Stein and Alice B. Toklas in 1930s Paris, exploring themes of exile, desire, and identity.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Book%20of%20Salt"
+  },
+  {
+    "id": 17,
+    "title": "Becoming Latina in 10 Easy Steps",
+    "author": "Lara Ríos",
+    "year": 2021,
+    "country": "Peru",
+    "genre": "poetry",
+    "themes": [
+      "identity construction",
+      "stereotypes",
+      "satire",
+      "assimilation",
+      "resistance"
+    ],
+    "connectingTheory": [
+      "culture",
+      "media",
+      "rhetorical listening"
+    ],
+    "abstract": "A satirical poetry collection challenging stereotypes and exploring the complexities of Latina identity in contemporary America.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Becoming%20Latina%20in%2010%20Easy%20Ste"
+  },
+  {
+    "id": 18,
+    "title": "My Beloved World",
+    "author": "Sonia Sotomayor",
+    "year": 2013,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "achievement",
+      "justice",
+      "poverty",
+      "education",
+      "resilience"
+    ],
+    "connectingTheory": [
+      "transfer",
+      "culture",
+      "multiliteracies"
+    ],
+    "abstract": "The memoir of the first Latina Supreme Court Justice, chronicling her journey from a Bronx housing project to the highest court in the land.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=My%20Beloved%20World"
+  },
+  {
+    "id": 19,
+    "title": "Don't Let Me Be Lonely",
+    "author": "Claudia Rankine",
+    "year": 2004,
+    "country": "Jamaica",
+    "genre": "poetry",
+    "themes": [
+      "race",
+      "trauma",
+      "media",
+      "death",
+      "american culture"
+    ],
+    "connectingTheory": [
+      "media",
+      "multimodalities",
+      "culture"
+    ],
+    "abstract": "An innovative work blending poetry, essay, and image to explore American culture, politics, and the nature of loneliness in the 21st century.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Don't%20Let%20Me%20Be%20Lonely"
+  },
+  {
+    "id": 20,
+    "title": "La Llorona and Other Stories",
+    "author": "Lucha Corpi",
+    "year": 2001,
+    "country": "Mexico",
+    "genre": "poetry",
+    "themes": [
+      "folklore",
+      "mythology",
+      "chicana experience",
+      "tradition",
+      "storytelling"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A collection exploring Mexican and Chicana mythology, particularly the figure of La Llorona, through contemporary feminist lenses.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=La%20Llorona%20and%20Other%20Stories"
+  },
+  {
+    "id": 21,
+    "title": "Eloquent Rage: A Black Feminist Discovers Her Superpower",
+    "author": "Brittney Cooper",
+    "year": 2018,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "anger",
+      "black feminism",
+      "politics",
+      "emotion",
+      "activism"
+    ],
+    "connectingTheory": [
+      "rhetorical listening",
+      "culture",
+      "media"
+    ],
+    "abstract": "A powerful exploration of how Black women's anger can be a source of strength and catalyst for social change.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Eloquent%20Rage%3A%20A%20Black%20Feminis"
+  },
+  {
+    "id": 22,
+    "title": "The Poet X",
+    "author": "Elizabeth Acevedo",
+    "year": 2018,
+    "country": "Dominican Republic",
+    "genre": "poetry",
+    "themes": [
+      "slam poetry",
+      "religion",
+      "sexuality",
+      "family",
+      "self-expression"
+    ],
+    "connectingTheory": [
+      "multimodalities",
+      "culture",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel-in-verse about Xiomara, a Dominican-American teen discovering her voice through slam poetry while navigating family, faith, and first love.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=The%20Poet%20X"
+  },
+  {
+    "id": 23,
+    "title": "Citizen: An American Lyric",
+    "author": "Claudia Rankine",
+    "year": 2014,
+    "country": "Jamaica",
+    "genre": "poetry",
+    "themes": [
+      "microaggressions",
+      "race",
+      "citizenship",
+      "trauma",
+      "contemporary america"
+    ],
+    "connectingTheory": [
+      "rhetorical listening",
+      "media",
+      "multimodalities"
+    ],
+    "abstract": "A groundbreaking work combining poetry, essay, and visual art to explore everyday racism and microaggressions in contemporary America.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Citizen%3A%20An%20American%20Lyric"
+  },
+  {
+    "id": 24,
+    "title": "Hunger of Memory",
+    "author": "Richard Rodriguez",
+    "year": 1982,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "education",
+      "assimilation",
+      "language",
+      "public vs private identity",
+      "affirmative action"
+    ],
+    "connectingTheory": [
+      "translingualism",
+      "transfer",
+      "culture"
+    ],
+    "abstract": "A controversial memoir exploring the costs of assimilation and education for a Mexican-American from Sacramento to the Ivy League.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Hunger%20of%20Memory"
+  },
+  {
+    "id": 25,
+    "title": "Lucky Boy",
+    "author": "Shanthi Sekaran",
+    "year": 2017,
+    "country": "India",
+    "genre": "diaspora",
+    "themes": [
+      "immigration",
+      "motherhood",
+      "family separation",
+      "legal system",
+      "belonging"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "transfer"
+    ],
+    "abstract": "A novel about two mothers—one undocumented immigrant, one seeking to adopt—whose lives intersect around a child, exploring immigration and motherhood.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Lucky%20Boy"
+  },
+  {
+    "id": 26,
+    "title": "Tender Hooks",
+    "author": "Beth Ann Fennelly",
+    "year": 2004,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "love",
+      "body",
+      "marriage",
+      "sensuality",
+      "intimacy"
+    ],
+    "connectingTheory": [
+      "grammar",
+      "culture",
+      "multimodalities"
+    ],
+    "abstract": "A poetry collection exploring love, marriage, and the female body with unflinching honesty and sensual detail.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Tender%20Hooks"
+  },
+  {
+    "id": 27,
+    "title": "The Fire This Time",
+    "author": "Jesmyn Ward (ed.)",
+    "year": 2016,
+    "country": "United States",
+    "genre": "history",
+    "themes": [
+      "race",
+      "justice",
+      "black lives matter",
+      "contemporary america",
+      "resistance"
+    ],
+    "connectingTheory": [
+      "rhetorical listening",
+      "culture",
+      "media"
+    ],
+    "abstract": "An anthology of essays and poems about race in contemporary America, inspired by James Baldwin's 'The Fire Next Time'.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20Fire%20This%20Time"
+  },
+  {
+    "id": 28,
+    "title": "Bad Indians: A Tribal Memoir",
+    "author": "Deborah Miranda",
+    "year": 2013,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "indigenous identity",
+      "california missions",
+      "trauma",
+      "history",
+      "family"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A genre-defying memoir exploring California Indian history, family trauma, and indigenous identity through poetry, prose, and archival materials.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Bad%20Indians%3A%20A%20Tribal%20Memoir"
+  },
+  {
+    "id": 29,
+    "title": "Zami: A New Spelling of My Name",
+    "author": "Audre Lorde",
+    "year": 1982,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "black lesbian identity",
+      "caribbean heritage",
+      "sexuality",
+      "feminism",
+      "community"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A biomythography exploring Lorde's development as a Black lesbian feminist poet, weaving together personal history and Caribbean mythology.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Zami%3A%20A%20New%20Spelling%20of%20My%20Nam"
+  },
+  {
+    "id": 30,
+    "title": "The Farming of Bones",
+    "author": "Edwidge Danticat",
+    "year": 1998,
+    "country": "Haiti",
+    "genre": "history",
+    "themes": [
+      "massacre",
+      "haitian-dominican relations",
+      "trauma",
+      "memory",
+      "testimony"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A novel about the 1937 Parsley Massacre on the Haiti-Dominican Republic border, exploring themes of trauma, memory, and testimony.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20Farming%20of%20Bones"
+  },
+  {
+    "id": 31,
+    "title": "Breath, Eyes, Memory",
+    "author": "Edwidge Danticat",
+    "year": 1994,
+    "country": "Haiti",
+    "genre": "diaspora",
+    "themes": [
+      "mother-daughter relationships",
+      "trauma",
+      "sexual violence",
+      "immigration",
+      "memory"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel following Sophie Caco from Haiti to New York, exploring intergenerational trauma, sexual violence, and the complexities of mother-daughter bonds.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Breath%2C%20Eyes%2C%20Memory"
+  },
+  {
+    "id": 32,
+    "title": "The Weight of All Things",
+    "author": "Sandra Benítez",
+    "year": 2000,
+    "country": "United States",
+    "genre": "history",
+    "themes": [
+      "civil war",
+      "el salvador",
+      "childhood trauma",
+      "resilience",
+      "faith"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A novel about a nine-year-old boy navigating the Salvadoran civil war, exploring themes of loss, resilience, and faith.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20Weight%20of%20All%20Things"
+  },
+  {
+    "id": 33,
+    "title": "Autobiography of a Brown Buffalo",
+    "author": "Oscar Zeta Acosta",
+    "year": 1972,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "chicano identity",
+      "legal profession",
+      "activism",
+      "counterculture",
+      "self-discovery"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A semi-autobiographical novel following a Chicano lawyer's journey of self-discovery during the Chicano Movement of the 1960s.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Autobiography%20of%20a%20Brown%20Buffa"
+  },
+  {
+    "id": 34,
+    "title": "An Island Like You",
+    "author": "Judith Ortiz Cofer",
+    "year": 1995,
+    "country": "Puerto Rico",
+    "genre": "poetry",
+    "themes": [
+      "puerto rican identity",
+      "adolescence",
+      "cultural duality",
+      "community",
+      "coming of age"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multiliteracies"
+    ],
+    "abstract": "A collection of short stories about Puerto Rican teenagers navigating life in a New Jersey barrio, exploring identity and belonging.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=An%20Island%20Like%20You"
+  },
+  {
+    "id": 35,
+    "title": "The Gravedigger's Daughter",
+    "author": "Joyce Carol Oates",
+    "year": 2007,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "immigration",
+      "trauma",
+      "survival",
+      "identity reinvention",
+      "american dream"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel about Rebecca Schwart, daughter of a German-Jewish immigrant gravedigger, fleeing violence and reinventing herself in America.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Gravedigger's%20Daughter"
+  },
+  {
+    "id": 36,
+    "title": "In the Country We Love",
+    "author": "Diane Guerrero",
+    "year": 2016,
+    "country": "Colombia",
+    "genre": "autobiography",
+    "themes": [
+      "deportation",
+      "family separation",
+      "undocumented immigration",
+      "resilience",
+      "advocacy"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "media"
+    ],
+    "abstract": "A memoir by actress Diane Guerrero about coming home to find her parents deported, exploring the impact of immigration policy on families.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=In%20the%20Country%20We%20Love"
+  },
+  {
+    "id": 37,
+    "title": "Solito",
+    "author": "Javier Zamora",
+    "year": 2022,
+    "country": "El Salvador",
+    "genre": "autobiography",
+    "themes": [
+      "migration",
+      "childhood",
+      "danger",
+      "family reunion",
+      "resilience"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "rhetorical listening"
+    ],
+    "abstract": "A memoir of Zamora's journey as a nine-year-old migrating alone from El Salvador to the United States to reunite with his parents.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Solito"
+  },
+  {
+    "id": 38,
+    "title": "Undrowned: Black Feminist Lessons from Marine Mammals",
+    "author": "Alexis Pauline Gumbs",
+    "year": 2020,
+    "country": "United States",
+    "genre": "the body",
+    "themes": [
+      "ecology",
+      "black feminism",
+      "breathing",
+      "marine life",
+      "embodiment"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "rhetorical listening"
+    ],
+    "abstract": "A meditation on breathing, survival, and Black feminist futures through the lens of marine mammal life.",
+    "coverImage": "https://placehold.co/300x450/EC4899/ffffff?text=Undrowned%3A%20Black%20Feminist%20Less"
+  },
+  {
+    "id": 39,
+    "title": "The Body Papers",
+    "author": "Grace Talusan",
+    "year": 2019,
+    "country": "Philippines",
+    "genre": "the body",
+    "themes": [
+      "immigration",
+      "cancer",
+      "sexual abuse",
+      "family secrets",
+      "embodiment"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A memoir exploring immigration, illness, and family secrets through the metaphor of the body as archive and documentation.",
+    "coverImage": "https://placehold.co/300x450/EC4899/ffffff?text=The%20Body%20Papers"
+  },
+  {
+    "id": 40,
+    "title": "The Poet X",
+    "author": "Elizabeth Acevedo",
+    "year": 2018,
+    "country": "Dominican Republic",
+    "genre": "the body",
+    "themes": [
+      "body image",
+      "religion",
+      "sexuality",
+      "self-expression",
+      "coming of age"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel about Xiomara, a teenage girl navigating her relationship with her body, faith, and voice through slam poetry.",
+    "coverImage": "https://placehold.co/300x450/EC4899/ffffff?text=The%20Poet%20X"
+  },
+  {
+    "id": 41,
+    "title": "The Far Away Brothers",
+    "author": "Lauren Markham",
+    "year": 2017,
+    "country": "El Salvador",
+    "genre": "biography",
+    "themes": [
+      "migration",
+      "twins",
+      "gang violence",
+      "asylum",
+      "american dream"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "media"
+    ],
+    "abstract": "A journalistic account of twin brothers fleeing gang violence in El Salvador and navigating the U.S. immigration system.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Far%20Away%20Brothers"
+  },
+  {
+    "id": 42,
+    "title": "Laboratory of Deficiency",
+    "author": "Lupe Mendez",
+    "year": 2018,
+    "country": "Mexico",
+    "genre": "poetry",
+    "themes": [
+      "education",
+      "deficit thinking",
+      "resistance",
+      "chicano identity",
+      "language"
+    ],
+    "connectingTheory": [
+      "rhetorical listening",
+      "culture",
+      "translingualism"
+    ],
+    "abstract": "A poetry collection challenging deficit narratives in education and exploring Chicano identity and linguistic resistance.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Laboratory%20of%20Deficiency"
+  },
+  {
+    "id": 43,
+    "title": "The Undocumented Americans",
+    "author": "Karla Cornejo Villavicencio",
+    "year": 2020,
+    "country": "Ecuador",
+    "genre": "history",
+    "themes": [
+      "undocumented immigration",
+      "invisibility",
+      "labor",
+      "trauma",
+      "resistance"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A groundbreaking work of reportage exploring the lives of undocumented immigrants across America, centering their stories and experiences.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20Undocumented%20Americans"
+  },
+  {
+    "id": 44,
+    "title": "Bless Me, Ultima",
+    "author": "Rudolfo Anaya",
+    "year": 1972,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "curanderismo",
+      "spirituality",
+      "coming of age",
+      "new mexico",
+      "cultural tradition"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel about Antonio Marez and his relationship with Ultima, a curandera, exploring Chicano spirituality and cultural traditions.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Bless%20Me%2C%20Ultima"
+  },
+  {
+    "id": 45,
+    "title": "A Cup of Water Under My Bed",
+    "author": "Daisy Hernández",
+    "year": 2014,
+    "country": "Colombia",
+    "genre": "autobiography",
+    "themes": [
+      "queer identity",
+      "colombian-cuban heritage",
+      "class",
+      "family",
+      "coming out"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A memoir about growing up queer and bicultural in a Colombian-Cuban family in New Jersey, navigating identity, class, and sexuality.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=A%20Cup%20of%20Water%20Under%20My%20Bed"
+  },
+  {
+    "id": 46,
+    "title": "The Book of Unknown Americans",
+    "author": "Cristina Henríquez",
+    "year": 2014,
+    "country": "United States",
+    "genre": "diaspora",
+    "themes": [
+      "immigration",
+      "latino community",
+      "love",
+      "disability",
+      "belonging"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "multiliteracies"
+    ],
+    "abstract": "A novel about two families from Latin America and their experiences in a Delaware apartment complex, exploring love, community, and belonging.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=The%20Book%20of%20Unknown%20Americans"
+  },
+  {
+    "id": 47,
+    "title": "Brown Girl Dreaming",
+    "author": "Jacqueline Woodson",
+    "year": 2014,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "childhood",
+      "civil rights",
+      "family",
+      "literacy",
+      "belonging"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multiliteracies",
+      "rhetorical listening"
+    ],
+    "abstract": "A memoir-in-verse about Woodson's childhood during the Civil Rights era, exploring family, identity, and the power of storytelling.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Brown%20Girl%20Dreaming"
+  },
+  {
+    "id": 48,
+    "title": "Tell Me How It Ends",
+    "author": "Valeria Luiselli",
+    "year": 2017,
+    "country": "Mexico",
+    "genre": "history",
+    "themes": [
+      "child migration",
+      "refugee crisis",
+      "immigration court",
+      "storytelling",
+      "justice"
+    ],
+    "connectingTheory": [
+      "rhetorical listening",
+      "culture",
+      "media"
+    ],
+    "abstract": "An essay about the author's work as a translator for child refugees in immigration court, exploring the migration crisis and storytelling.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Tell%20Me%20How%20It%20Ends"
+  },
+  {
+    "id": 49,
+    "title": "America Is Not the Heart",
+    "author": "Elaine Castillo",
+    "year": 2018,
+    "country": "Philippines",
+    "genre": "diaspora",
+    "themes": [
+      "filipino diaspora",
+      "revolution",
+      "trauma",
+      "queer identity",
+      "healing"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "translingualism"
+    ],
+    "abstract": "A novel about a former revolutionary fleeing the Philippines to live with family in California, exploring trauma, diaspora, and healing.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=America%20Is%20Not%20the%20Heart"
+  },
+  {
+    "id": 50,
+    "title": "Lost Children Archive",
+    "author": "Valeria Luiselli",
+    "year": 2019,
+    "country": "Mexico",
+    "genre": "diaspora",
+    "themes": [
+      "child migration",
+      "family road trip",
+      "documentary",
+      "archives",
+      "memory"
+    ],
+    "connectingTheory": [
+      "media",
+      "multimodalities",
+      "culture"
+    ],
+    "abstract": "A novel about a family road trip intertwined with the crisis of child migrants at the border, exploring archiving, memory, and storytelling.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Lost%20Children%20Archive"
+  },
+  {
+    "id": 51,
+    "title": "Cantoras",
+    "author": "Carolina De Robertis",
+    "year": 2019,
+    "country": "Uruguay",
+    "genre": "diaspora",
+    "themes": [
+      "lesbian identity",
+      "dictatorship",
+      "resistance",
+      "community",
+      "uruguay"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A novel about five women forming a lesbian community during Uruguay's military dictatorship, exploring resistance, love, and survival.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Cantoras"
+  },
+  {
+    "id": 52,
+    "title": "Fruit of the Drunken Tree",
+    "author": "Ingrid Rojas Contreras",
+    "year": 2018,
+    "country": "Colombia",
+    "genre": "history",
+    "themes": [
+      "pablo escobar",
+      "class",
+      "childhood",
+      "violence",
+      "colombia"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A novel about two girls from different classes in 1990s Bogotá during the reign of Pablo Escobar, exploring violence, class, and childhood.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Fruit%20of%20the%20Drunken%20Tree"
+  },
+  {
+    "id": 53,
+    "title": "The Man Who Could Fly and Other Stories",
+    "author": "Rudolfo Anaya",
+    "year": 2006,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "magical realism",
+      "new mexico",
+      "spirituality",
+      "folklore",
+      "tradition"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multimodalities"
+    ],
+    "abstract": "A collection of stories blending magical realism and Chicano folklore, exploring New Mexican spirituality and cultural traditions.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=The%20Man%20Who%20Could%20Fly%20and%20Othe"
+  },
+  {
+    "id": 54,
+    "title": "How to Be a Chicana Role Model",
+    "author": "Michele Serros",
+    "year": 2000,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "identity",
+      "humor",
+      "stereotypes",
+      "chicana experience",
+      "satire"
+    ],
+    "connectingTheory": [
+      "culture",
+      "media",
+      "rhetorical listening"
+    ],
+    "abstract": "A collection of humorous essays and poetry exploring Chicana identity, stereotypes, and the absurdity of cultural expectations.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=How%20to%20Be%20a%20Chicana%20Role%20Model"
+  },
+  {
+    "id": 55,
+    "title": "Down These Mean Streets",
+    "author": "Piri Thomas",
+    "year": 1967,
+    "country": "Puerto Rico",
+    "genre": "autobiography",
+    "themes": [
+      "urban poverty",
+      "race",
+      "crime",
+      "puerto rican identity",
+      "masculinity"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A memoir of growing up Puerto Rican in East Harlem, navigating poverty, racism, crime, and identity in mid-century New York.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Down%20These%20Mean%20Streets"
+  },
+  {
+    "id": 56,
+    "title": "I Am Not Your Perfect Mexican Daughter",
+    "author": "Erika L. Sánchez",
+    "year": 2017,
+    "country": "Mexico",
+    "genre": "autobiography",
+    "themes": [
+      "grief",
+      "family expectations",
+      "mental health",
+      "sexuality",
+      "chicana identity"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A novel about Julia, a Mexican-American teen grappling with her sister's death and family expectations while discovering her own identity.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=I%20Am%20Not%20Your%20Perfect%20Mexican%20"
+  },
+  {
+    "id": 57,
+    "title": "Infinite Country",
+    "author": "Patricia Engel",
+    "year": 2021,
+    "country": "Colombia",
+    "genre": "diaspora",
+    "themes": [
+      "deportation",
+      "family separation",
+      "colombia",
+      "immigration",
+      "belonging"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "translingualism"
+    ],
+    "abstract": "A novel about a family divided by deportation, navigating between Colombia and the United States, exploring belonging and sacrifice.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Infinite%20Country"
+  },
+  {
+    "id": 58,
+    "title": "Sabrina & Corina",
+    "author": "Kali Fajardo-Anstine",
+    "year": 2019,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "indigenous latina identity",
+      "colorado",
+      "family",
+      "violence",
+      "resilience"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A collection of stories about Latina women in the American West, exploring indigenous heritage, family, and survival.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Sabrina%20%26%20Corina"
+  },
+  {
+    "id": 59,
+    "title": "Affinity",
+    "author": "Sarah Waters",
+    "year": 1999,
+    "country": "United Kingdom",
+    "genre": "biography",
+    "themes": [
+      "victorian era",
+      "spiritualism",
+      "lesbian desire",
+      "prison",
+      "class"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A novel about a Victorian woman visiting a female spiritualist in prison, exploring desire, deception, and class in 1870s London.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Affinity"
+  },
+  {
+    "id": 60,
+    "title": "The Crusades of Cesar Chavez",
+    "author": "Miriam Pawel",
+    "year": 2014,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "labor movement",
+      "activism",
+      "farmworkers",
+      "leadership",
+      "sacrifice"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A biography of César Chávez examining his leadership of the farmworkers movement and the complexities of his activism and legacy.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Crusades%20of%20Cesar%20Chavez"
+  },
+  {
+    "id": 61,
+    "title": "Decolonize Your Diet",
+    "author": "Luz Calvo and Catriona Rueda Esquibel",
+    "year": 2015,
+    "country": "Mexico",
+    "genre": "the body",
+    "themes": [
+      "food sovereignty",
+      "indigenous cuisine",
+      "health",
+      "decolonization",
+      "culture"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "translingualism"
+    ],
+    "abstract": "A cookbook and manifesto exploring how plant-based Mexican American foods can promote health and cultural reclamation.",
+    "coverImage": "https://placehold.co/300x450/EC4899/ffffff?text=Decolonize%20Your%20Diet"
+  },
+  {
+    "id": 62,
+    "title": "The Holy Spirit of My Uncle's Cojones",
+    "author": "Toni Margarita Plummer",
+    "year": 2022,
+    "country": "Mexico",
+    "genre": "poetry",
+    "themes": [
+      "family",
+      "humor",
+      "spirituality",
+      "mexican american identity",
+      "gender"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multimodalities"
+    ],
+    "abstract": "A poetry collection blending humor and spirituality to explore Mexican American family dynamics, gender, and cultural identity.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=The%20Holy%20Spirit%20of%20My%20Uncle's%20"
+  },
+  {
+    "id": 63,
+    "title": "Chicana Falsa and Other Stories of Death, Identity and Oxnard",
+    "author": "Michele Serros",
+    "year": 1998,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "authenticity",
+      "chicana identity",
+      "humor",
+      "death",
+      "california"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A collection exploring questions of Chicana authenticity, cultural identity, and the complexities of belonging with humor and insight.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Chicana%20Falsa%20and%20Other%20Storie"
+  },
+  {
+    "id": 64,
+    "title": "The Distance Between Us: A Memoir",
+    "author": "Reyna Grande",
+    "year": 2012,
+    "country": "Mexico",
+    "genre": "autobiography",
+    "themes": [
+      "immigration",
+      "abandonment",
+      "poverty",
+      "education",
+      "family"
+    ],
+    "connectingTheory": [
+      "transfer",
+      "culture",
+      "translingualism"
+    ],
+    "abstract": "A memoir about growing up in Mexico and immigrating to the U.S., exploring themes of abandonment, poverty, and the pursuit of education.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=The%20Distance%20Between%20Us%3A%20A%20Mem"
+  },
+  {
+    "id": 65,
+    "title": "Sula",
+    "author": "Toni Morrison",
+    "year": 1973,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "friendship",
+      "black women",
+      "community",
+      "independence",
+      "judgment"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A novel about the friendship between Nel and Sula, two Black women in a small Ohio town, exploring themes of loyalty, independence, and community judgment.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Sula"
+  },
+  {
+    "id": 66,
+    "title": "Redefining Realness",
+    "author": "Janet Mock",
+    "year": 2014,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "trans identity",
+      "race",
+      "gender",
+      "sexuality",
+      "resilience"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A memoir by Janet Mock about growing up trans, multiracial, and poor in America, redefining what it means to be real and authentic.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Redefining%20Realness"
+  },
+  {
+    "id": 67,
+    "title": "The Book of Delights",
+    "author": "Ross Gay",
+    "year": 2019,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "joy",
+      "daily observation",
+      "community",
+      "nature",
+      "gratitude"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multiliteracies",
+      "rhetorical listening"
+    ],
+    "abstract": "A collection of essays celebrating daily delights and small joys, exploring themes of community, nature, and gratitude.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=The%20Book%20of%20Delights"
+  },
+  {
+    "id": 68,
+    "title": "Feminism Is for Everybody",
+    "author": "bell hooks",
+    "year": 2000,
+    "country": "United States",
+    "genre": "history",
+    "themes": [
+      "feminism",
+      "accessibility",
+      "social justice",
+      "intersectionality",
+      "education"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "An accessible introduction to feminist theory and practice, arguing that feminism is for everyone and essential to social justice.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Feminism%20Is%20for%20Everybody"
+  },
+  {
+    "id": 69,
+    "title": "Sister Outsider",
+    "author": "Audre Lorde",
+    "year": 1984,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "difference",
+      "intersectionality",
+      "poetry",
+      "activism",
+      "black feminism"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A collection of essays and speeches exploring difference, intersectionality, and the power of poetry in Black feminist activism.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Sister%20Outsider"
+  },
+  {
+    "id": 70,
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "year": 1987,
+    "country": "United States",
+    "genre": "history",
+    "themes": [
+      "slavery",
+      "trauma",
+      "motherhood",
+      "haunting",
+      "memory"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A novel about Sethe, an escaped slave haunted by the ghost of her daughter, exploring the lasting trauma of slavery and motherhood.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Beloved"
+  },
+  {
+    "id": 71,
+    "title": "We Should All Be Feminists",
+    "author": "Chimamanda Ngozi Adichie",
+    "year": 2014,
+    "country": "Nigeria",
+    "genre": "history",
+    "themes": [
+      "feminism",
+      "gender equality",
+      "culture",
+      "global perspective",
+      "education"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "An essay adapted from a TEDx talk arguing for a more inclusive, global understanding of feminism and gender equality.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=We%20Should%20All%20Be%20Feminists"
+  },
+  {
+    "id": 72,
+    "title": "The Color Purple",
+    "author": "Alice Walker",
+    "year": 1982,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "sexual violence",
+      "resilience",
+      "sisterhood",
+      "black women",
+      "spirituality"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "An epistolary novel about Celie, a Black woman in the rural South, finding her voice and strength through sisterhood and spirituality.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Color%20Purple"
+  },
+  {
+    "id": 73,
+    "title": "Their Eyes Were Watching God",
+    "author": "Zora Neale Hurston",
+    "year": 1937,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "self-discovery",
+      "love",
+      "independence",
+      "black women",
+      "voice"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel about Janie Crawford's journey to self-discovery and independence, exploring love, voice, and Black women's autonomy.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Their%20Eyes%20Were%20Watching%20God"
+  },
+  {
+    "id": 74,
+    "title": "The House of the Spirits",
+    "author": "Isabel Allende",
+    "year": 1982,
+    "country": "Chile",
+    "genre": "history",
+    "themes": [
+      "magical realism",
+      "chile",
+      "political upheaval",
+      "family saga",
+      "women's power"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "translingualism"
+    ],
+    "abstract": "A multi-generational saga of the Trueba family during Chile's political upheaval, blending magical realism and historical fiction.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20House%20of%20the%20Spirits"
+  },
+  {
+    "id": 75,
+    "title": "Eva Luna",
+    "author": "Isabel Allende",
+    "year": 1987,
+    "country": "Chile",
+    "genre": "biography",
+    "themes": [
+      "storytelling",
+      "latin america",
+      "revolution",
+      "orphan",
+      "resilience"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multiliteracies",
+      "translingualism"
+    ],
+    "abstract": "A novel about Eva Luna, a storyteller navigating life in an unnamed Latin American country, exploring the power of narrative and resilience.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Eva%20Luna"
+  },
+  {
+    "id": 76,
+    "title": "Of Love and Shadows",
+    "author": "Isabel Allende",
+    "year": 1984,
+    "country": "Chile",
+    "genre": "history",
+    "themes": [
+      "dictatorship",
+      "journalism",
+      "love",
+      "political violence",
+      "resistance"
+    ],
+    "connectingTheory": [
+      "culture",
+      "media",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel about a journalist uncovering political murders during a South American dictatorship, exploring love and resistance.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Of%20Love%20and%20Shadows"
+  },
+  {
+    "id": 77,
+    "title": "The Labyrinth of Solitude",
+    "author": "Octavio Paz",
+    "year": 1950,
+    "country": "Mexico",
+    "genre": "history",
+    "themes": [
+      "mexican identity",
+      "philosophy",
+      "solitude",
+      "history",
+      "culture"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "translingualism"
+    ],
+    "abstract": "A philosophical essay exploring Mexican identity, history, and culture through the lens of solitude and national character.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20Labyrinth%20of%20Solitude"
+  },
+  {
+    "id": 78,
+    "title": "I Know Why the Caged Bird Sings",
+    "author": "Maya Angelou",
+    "year": 1969,
+    "country": "United States",
+    "genre": "autobiography",
+    "themes": [
+      "racism",
+      "trauma",
+      "resilience",
+      "literacy",
+      "voice"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multiliteracies"
+    ],
+    "abstract": "The first of Maya Angelou's autobiographies, chronicling her childhood in the segregated South and her journey to finding her voice.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=I%20Know%20Why%20the%20Caged%20Bird%20Sing"
+  },
+  {
+    "id": 79,
+    "title": "And Still I Rise",
+    "author": "Maya Angelou",
+    "year": 1978,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "resilience",
+      "black pride",
+      "empowerment",
+      "resistance",
+      "dignity"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A poetry collection celebrating Black resilience, pride, and the refusal to be diminished by oppression.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=And%20Still%20I%20Rise"
+  },
+  {
+    "id": 80,
+    "title": "Woman Warrior",
+    "author": "Maxine Hong Kingston",
+    "year": 1976,
+    "country": "China",
+    "genre": "autobiography",
+    "themes": [
+      "chinese american identity",
+      "mythology",
+      "gender",
+      "immigration",
+      "voice"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multimodalities"
+    ],
+    "abstract": "A memoir blending autobiography and Chinese mythology, exploring the experiences of Chinese American women and the power of storytelling.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Woman%20Warrior"
+  },
+  {
+    "id": 81,
+    "title": "Parable of the Sower",
+    "author": "Octavia Butler",
+    "year": 1993,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "dystopia",
+      "climate change",
+      "religion",
+      "survival",
+      "community"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "rhetorical listening"
+    ],
+    "abstract": "A dystopian novel about Lauren Olamina creating a new religion in a climate-ravaged future America, exploring survival and community building.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=Parable%20of%20the%20Sower"
+  },
+  {
+    "id": 82,
+    "title": "Kindred",
+    "author": "Octavia Butler",
+    "year": 1979,
+    "country": "United States",
+    "genre": "history",
+    "themes": [
+      "slavery",
+      "time travel",
+      "trauma",
+      "ancestry",
+      "survival"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A novel about a Black woman time-traveling to antebellum Maryland, confronting the brutality of slavery and her own ancestry.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Kindred"
+  },
+  {
+    "id": 83,
+    "title": "The Bluest Eye",
+    "author": "Toni Morrison",
+    "year": 1970,
+    "country": "United States",
+    "genre": "biography",
+    "themes": [
+      "beauty standards",
+      "racism",
+      "childhood trauma",
+      "internalized oppression",
+      "community"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A novel about Pecola Breedlove, a young Black girl longing for blue eyes, exploring the devastating impact of racist beauty standards.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Bluest%20Eye"
+  },
+  {
+    "id": 84,
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "year": 1967,
+    "country": "Colombia",
+    "genre": "history",
+    "themes": [
+      "magical realism",
+      "family saga",
+      "cyclical history",
+      "latin america",
+      "solitude"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "translingualism"
+    ],
+    "abstract": "A landmark novel chronicling seven generations of the Buendía family in the fictional town of Macondo, blending history and magical realism.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=One%20Hundred%20Years%20of%20Solitude"
+  },
+  {
+    "id": 85,
+    "title": "Love in the Time of Cholera",
+    "author": "Gabriel García Márquez",
+    "year": 1985,
+    "country": "Colombia",
+    "genre": "biography",
+    "themes": [
+      "love",
+      "aging",
+      "persistence",
+      "caribbean",
+      "time"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multimodalities"
+    ],
+    "abstract": "A novel about a love triangle spanning over fifty years in a Caribbean port city, exploring love, aging, and the passage of time.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=Love%20in%20the%20Time%20of%20Cholera"
+  },
+  {
+    "id": 86,
+    "title": "Paula",
+    "author": "Isabel Allende",
+    "year": 1994,
+    "country": "Chile",
+    "genre": "autobiography",
+    "themes": [
+      "grief",
+      "motherhood",
+      "family history",
+      "death",
+      "memory"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multiliteracies"
+    ],
+    "abstract": "A memoir written as a letter to Allende's dying daughter, weaving together family history, grief, and the power of memory.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=Paula"
+  },
+  {
+    "id": 87,
+    "title": "In the Name of Salome",
+    "author": "Julia Alvarez",
+    "year": 2000,
+    "country": "Dominican Republic",
+    "genre": "biography",
+    "themes": [
+      "poetry",
+      "political activism",
+      "motherhood",
+      "dominican history",
+      "exile"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel about Salomé Ureña, a 19th-century Dominican poet, and her daughter Camila, exploring poetry, activism, and exile.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=In%20the%20Name%20of%20Salome"
+  },
+  {
+    "id": 88,
+    "title": "The Brief and Wondrous Life of Oscar Wao",
+    "author": "Junot Díaz",
+    "year": 2007,
+    "country": "Dominican Republic",
+    "genre": "diaspora",
+    "themes": [
+      "fukú",
+      "nerd culture",
+      "dictatorship",
+      "family curse",
+      "identity"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "multimodalities"
+    ],
+    "abstract": "A novel about Oscar, a Dominican-American nerd, and his family's curse under the Trujillo dictatorship, blending history and pop culture.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=The%20Brief%20and%20Wondrous%20Life%20of"
+  },
+  {
+    "id": 89,
+    "title": "The Death of Artemio Cruz",
+    "author": "Carlos Fuentes",
+    "year": 1962,
+    "country": "Mexico",
+    "genre": "biography",
+    "themes": [
+      "mexican revolution",
+      "corruption",
+      "power",
+      "memory",
+      "mortality"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A novel about a dying Mexican tycoon reflecting on his life and the corruption of revolutionary ideals, told in three narrative voices.",
+    "coverImage": "https://placehold.co/300x450/10B981/ffffff?text=The%20Death%20of%20Artemio%20Cruz"
+  },
+  {
+    "id": 90,
+    "title": "So Far from God",
+    "author": "Ana Castillo",
+    "year": 1993,
+    "country": "United States",
+    "genre": "poetry",
+    "themes": [
+      "magical realism",
+      "chicana spirituality",
+      "sisterhood",
+      "new mexico",
+      "resistance"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "translingualism"
+    ],
+    "abstract": "A novel about four sisters in New Mexico, blending magical realism and Chicana spirituality to explore sisterhood and resistance.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=So%20Far%20from%20God"
+  },
+  {
+    "id": 91,
+    "title": "The Motorcycle Diaries",
+    "author": "Ernesto 'Che' Guevara",
+    "year": 1993,
+    "country": "Argentina",
+    "genre": "autobiography",
+    "themes": [
+      "travel",
+      "social justice",
+      "latin america",
+      "transformation",
+      "poverty"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "rhetorical listening"
+    ],
+    "abstract": "A memoir of Guevara's motorcycle journey across South America, documenting his transformation and awakening to social injustice.",
+    "coverImage": "https://placehold.co/300x450/EF4444/ffffff?text=The%20Motorcycle%20Diaries"
+  },
+  {
+    "id": 92,
+    "title": "Chronicle of a Death Foretold",
+    "author": "Gabriel García Márquez",
+    "year": 1981,
+    "country": "Colombia",
+    "genre": "history",
+    "themes": [
+      "honor killing",
+      "community complicity",
+      "fate",
+      "journalism",
+      "investigation"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A novella investigating a murder foretold to the entire town yet not prevented, exploring honor, fate, and community complicity.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Chronicle%20of%20a%20Death%20Foretold"
+  },
+  {
+    "id": 93,
+    "title": "The Savage Detectives",
+    "author": "Roberto Bolaño",
+    "year": 1998,
+    "country": "Chile",
+    "genre": "poetry",
+    "themes": [
+      "poetry",
+      "bohemian life",
+      "mexico city",
+      "quest",
+      "artistic pursuit"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "translingualism"
+    ],
+    "abstract": "A novel about two young poets searching for a vanished Mexican poetess, exploring bohemian life and artistic obsession in 1970s Mexico City.",
+    "coverImage": "https://placehold.co/300x450/9F7AEA/ffffff?text=The%20Savage%20Detectives"
+  },
+  {
+    "id": 94,
+    "title": "Drown",
+    "author": "Junot Díaz",
+    "year": 1996,
+    "country": "Dominican Republic",
+    "genre": "diaspora",
+    "themes": [
+      "immigration",
+      "masculinity",
+      "poverty",
+      "dominican diaspora",
+      "identity"
+    ],
+    "connectingTheory": [
+      "culture",
+      "translingualism",
+      "rhetorical listening"
+    ],
+    "abstract": "A collection of short stories about Dominican immigrants navigating poverty, masculinity, and identity in New Jersey.",
+    "coverImage": "https://placehold.co/300x450/3B82F6/ffffff?text=Drown"
+  },
+  {
+    "id": 95,
+    "title": "Like Water for Chocolate",
+    "author": "Laura Esquivel",
+    "year": 1989,
+    "country": "Mexico",
+    "genre": "the body",
+    "themes": [
+      "food",
+      "magical realism",
+      "forbidden love",
+      "tradition",
+      "emotion"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "translingualism"
+    ],
+    "abstract": "A novel using recipes and magical realism to tell the story of Tita, whose emotions infuse the food she cooks during the Mexican Revolution.",
+    "coverImage": "https://placehold.co/300x450/EC4899/ffffff?text=Like%20Water%20for%20Chocolate"
+  },
+  {
+    "id": 96,
+    "title": "Open Veins of Latin America",
+    "author": "Eduardo Galeano",
+    "year": 1971,
+    "country": "Uruguay",
+    "genre": "history",
+    "themes": [
+      "colonialism",
+      "exploitation",
+      "economic history",
+      "resistance",
+      "imperialism"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "media"
+    ],
+    "abstract": "A historical analysis of Latin America's economic exploitation from colonialism to modern imperialism, documenting resistance and resilience.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Open%20Veins%20of%20Latin%20America"
+  },
+  {
+    "id": 97,
+    "title": "The Inhabited Woman",
+    "author": "Gioconda Belli",
+    "year": 1988,
+    "country": "Nicaragua",
+    "genre": "history",
+    "themes": [
+      "revolution",
+      "feminism",
+      "political activism",
+      "nicaragua",
+      "resistance"
+    ],
+    "connectingTheory": [
+      "culture",
+      "rhetorical listening",
+      "multimodalities"
+    ],
+    "abstract": "A novel about a woman architect joining revolutionary movements in Nicaragua, possessed by the spirit of an indigenous resistance fighter.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=The%20Inhabited%20Woman"
+  },
+  {
+    "id": 98,
+    "title": "Daughter of Fortune",
+    "author": "Isabel Allende",
+    "year": 1999,
+    "country": "Chile",
+    "genre": "history",
+    "themes": [
+      "gold rush",
+      "adventure",
+      "independence",
+      "cultural exchange",
+      "love"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "translingualism"
+    ],
+    "abstract": "A novel about Eliza Sommers traveling from Chile to California during the Gold Rush, seeking her lover and finding independence.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=Daughter%20of%20Fortune"
+  },
+  {
+    "id": 99,
+    "title": "The Tarot Cafe",
+    "author": "Sang-Sun Park",
+    "year": 2005,
+    "country": "South Korea",
+    "genre": "the body",
+    "themes": [
+      "tarot",
+      "mythology",
+      "supernatural",
+      "healing",
+      "identity"
+    ],
+    "connectingTheory": [
+      "culture",
+      "multimodalities",
+      "media"
+    ],
+    "abstract": "A graphic novel about a tarot reader helping supernatural beings, exploring mythology, healing, and identity through visual storytelling.",
+    "coverImage": "https://placehold.co/300x450/EC4899/ffffff?text=The%20Tarot%20Cafe"
+  },
+  {
+    "id": 100,
+    "title": "A Long Petal of the Sea",
+    "author": "Isabel Allende",
+    "year": 2020,
+    "country": "Chile",
+    "genre": "history",
+    "themes": [
+      "spanish civil war",
+      "exile",
+      "refuge",
+      "chile",
+      "endurance"
+    ],
+    "connectingTheory": [
+      "culture",
+      "transfer",
+      "rhetorical listening"
+    ],
+    "abstract": "A novel following refugees from the Spanish Civil War to Chile, exploring themes of exile, endurance, and finding home across generations.",
+    "coverImage": "https://placehold.co/300x450/F59E0B/ffffff?text=A%20Long%20Petal%20of%20the%20Sea"
+  }
+]
