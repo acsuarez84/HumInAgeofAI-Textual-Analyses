@@ -140,7 +140,57 @@
                 <div class="text-input-section">
                     <h2>Your Text Input</h2>
                     <p class="instruction">Enter your original writing, abstracts, or excerpts for semantic analysis:</p>
-                    <textarea id="user-text" placeholder="Paste or type your text here..."></textarea>
+
+                    <div class="translation-controls">
+                        <div class="translation-selector">
+                            <label for="source-language">Source Language:</label>
+                            <select id="source-language">
+                                <option value="auto">Auto-Detect</option>
+                            </select>
+                        </div>
+                        <button id="translate-btn" class="translate-btn">🌐 Translate to English</button>
+                        <button id="toggle-translation-view" class="toggle-btn">↔️ Toggle Side-by-Side</button>
+                    </div>
+
+                    <div id="text-input-container" class="text-input-container single-view">
+                        <div class="text-box-wrapper">
+                            <div class="text-box-header">
+                                <span id="original-lang-label">Original Text</span>
+                                <span id="char-count">0 characters</span>
+                            </div>
+                            <textarea id="user-text" placeholder="Paste or type your text here in any of 200+ languages..."></textarea>
+                        </div>
+
+                        <div class="text-box-wrapper translation-box">
+                            <div class="text-box-header">
+                                <span>English Translation</span>
+                                <span id="translation-status"></span>
+                            </div>
+                            <textarea id="translated-text" placeholder="Translation will appear here..." readonly></textarea>
+                        </div>
+                    </div>
+
+                    <div id="translation-analysis" class="translation-analysis" style="display: none;">
+                        <h3>Translation Quality Analysis</h3>
+                        <div class="analysis-grid">
+                            <div class="analysis-category">
+                                <h4>📝 Grammar</h4>
+                                <ul id="grammar-analysis"></ul>
+                            </div>
+                            <div class="analysis-category">
+                                <h4>🏗️ Structure</h4>
+                                <ul id="structure-analysis"></ul>
+                            </div>
+                            <div class="analysis-category">
+                                <h4>💭 Meaning</h4>
+                                <ul id="meaning-analysis"></ul>
+                            </div>
+                        </div>
+                        <div class="quality-indicator">
+                            <span>Overall Quality: </span>
+                            <span id="quality-score" class="quality-badge">-</span>
+                        </div>
+                    </div>
 
                     <div class="text-controls">
                         <button id="clear-text">Clear Text</button>
@@ -286,6 +336,7 @@
         <p>&copy; 2025 LLM & Latino Women Rhetoric Tracker | <a href="https://github.com/acsuarez84/HumInAgeofAI-Textual-Analyses" target="_blank">View on GitHub</a></p>
     </footer>
 
+    <script src="translation-service.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

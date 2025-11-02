@@ -1046,3 +1046,240 @@ window.switchTab = function(tabName) {
         initializeTimeline();
     }
 };
+
+// ===== TRANSLATION FUNCTIONALITY =====
+
+// Translation state
+let translationService = null;
+let currentSourceLang = 'auto';
+let currentTranslation = '';
+let isSideBySideView = false;
+
+// Translation DOM elements
+const sourceLanguageSelect = document.getElementById('source-language');
+const translateBtn = document.getElementById('translate-btn');
+const toggleTranslationViewBtn = document.getElementById('toggle-translation-view');
+const textInputContainer = document.getElementById('text-input-container');
+const translatedTextArea = document.getElementById('translated-text');
+const translationAnalysisDiv = document.getElementById('translation-analysis');
+const grammarAnalysisList = document.getElementById('grammar-analysis');
+const structureAnalysisList = document.getElementById('structure-analysis');
+const meaningAnalysisList = document.getElementById('meaning-analysis');
+const qualityScoreBadge = document.getElementById('quality-score');
+const originalLangLabel = document.getElementById('original-lang-label');
+const charCount = document.getElementById('char-count');
+const translationStatus = document.getElementById('translation-status');
+
+// Initialize translation service
+function initializeTranslation() {
+    translationService = new TranslationService();
+    populateLanguageDropdown();
+    setupTranslationListeners();
+}
+
+// Populate language dropdown with 200+ languages
+function populateLanguageDropdown() {
+    const languages = TranslationService.getAllLanguages();
+
+    // Add auto-detect option
+    const autoOption = document.createElement('option');
+    autoOption.value = 'auto';
+    autoOption.textContent = 'Auto-Detect';
+    sourceLanguageSelect.appendChild(autoOption);
+
+    // Add separator
+    const separator = document.createElement('option');
+    separator.disabled = true;
+    separator.textContent = '──────────';
+    sourceLanguageSelect.appendChild(separator);
+
+    // Add all languages
+    languages.forEach(lang => {
+        const option = document.createElement('option');
+        option.value = lang.code;
+        option.textContent = lang.name;
+        sourceLanguageSelect.appendChild(option);
+    });
+}
+
+// Setup translation event listeners
+function setupTranslationListeners() {
+    // Translate button
+    if (translateBtn) {
+        translateBtn.addEventListener('click', handleTranslation);
+    }
+
+    // Toggle view button
+    if (toggleTranslationViewBtn) {
+        toggleTranslationViewBtn.addEventListener('click', toggleTranslationView);
+    }
+
+    // Source language change
+    if (sourceLanguageSelect) {
+        sourceLanguageSelect.addEventListener('change', (e) => {
+            currentSourceLang = e.target.value;
+            updateOriginalLangLabel();
+        });
+    }
+
+    // Character count
+    if (userText) {
+        userText.addEventListener('input', updateCharCount);
+    }
+}
+
+// Handle translation
+async function handleTranslation() {
+    const text = userText.value.trim();
+
+    if (!text) {
+        showNotification('Please enter some text to translate.', 'error');
+        return;
+    }
+
+    // Disable button and show loading
+    translateBtn.disabled = true;
+    translateBtn.textContent = '🔄 Translating...';
+    translationStatus.textContent = 'Translating...';
+    translationStatus.className = 'translating';
+
+    try {
+        let sourceLang = currentSourceLang;
+
+        // Auto-detect language if needed
+        if (sourceLang === 'auto') {
+            translationStatus.textContent = 'Detecting language...';
+            sourceLang = await translationService.detectLanguage(text);
+            currentSourceLang = sourceLang;
+            sourceLanguageSelect.value = sourceLang;
+            updateOriginalLangLabel();
+        }
+
+        // Translate to English
+        translationStatus.textContent = 'Translating to English...';
+        const result = await translationService.translate(text, sourceLang, 'en');
+
+        if (result.error) {
+            throw new Error(result.error);
+        }
+
+        currentTranslation = result.translation;
+        translatedTextArea.value = currentTranslation;
+
+        // Analyze translation
+        const analysis = translationService.analyzeTranslation(text, currentTranslation, sourceLang, 'en');
+        displayTranslationAnalysis(analysis);
+
+        // Show success
+        translationStatus.textContent = '✓ Translated';
+        translationStatus.className = 'success';
+
+        // Auto-enable side-by-side view if not already
+        if (!isSideBySideView) {
+            toggleTranslationView();
+        }
+
+        showNotification('Translation completed successfully!');
+
+    } catch (error) {
+        console.error('Translation error:', error);
+        translationStatus.textContent = '✗ Translation failed';
+        translationStatus.className = 'error';
+        showNotification('Translation failed: ' + error.message, 'error');
+    } finally {
+        translateBtn.disabled = false;
+        translateBtn.textContent = '🌐 Translate to English';
+    }
+}
+
+// Toggle translation view
+function toggleTranslationView() {
+    isSideBySideView = !isSideBySideView;
+
+    if (isSideBySideView) {
+        textInputContainer.classList.remove('single-view');
+        textInputContainer.classList.add('side-by-side-view');
+        toggleTranslationViewBtn.textContent = '⬅️ Single View';
+    } else {
+        textInputContainer.classList.remove('side-by-side-view');
+        textInputContainer.classList.add('single-view');
+        toggleTranslationViewBtn.textContent = '↔️ Toggle Side-by-Side';
+    }
+}
+
+// Display translation analysis
+function displayTranslationAnalysis(analysis) {
+    // Clear previous analysis
+    grammarAnalysisList.innerHTML = '';
+    structureAnalysisList.innerHTML = '';
+    meaningAnalysisList.innerHTML = '';
+
+    // Add grammar points
+    analysis.grammar.forEach(point => {
+        const li = document.createElement('li');
+        li.textContent = point;
+        grammarAnalysisList.appendChild(li);
+    });
+
+    // Add structure points
+    analysis.structure.forEach(point => {
+        const li = document.createElement('li');
+        li.textContent = point;
+        structureAnalysisList.appendChild(li);
+    });
+
+    // Add meaning points
+    analysis.meaning.forEach(point => {
+        const li = document.createElement('li');
+        li.textContent = point;
+        meaningAnalysisList.appendChild(li);
+    });
+
+    // Set quality score
+    qualityScoreBadge.textContent = analysis.quality;
+    qualityScoreBadge.className = `quality-badge ${analysis.quality}`;
+
+    // Show analysis section
+    translationAnalysisDiv.style.display = 'block';
+}
+
+// Update original language label
+function updateOriginalLangLabel() {
+    if (currentSourceLang === 'auto') {
+        originalLangLabel.textContent = 'Original Text (Auto-Detect)';
+    } else {
+        const langName = TranslationService.getLanguageName(currentSourceLang);
+        originalLangLabel.textContent = `Original Text (${langName})`;
+    }
+
+    // Apply RTL or CJK styles if needed
+    const textBoxWrapper = document.querySelector('.text-box-wrapper');
+    const rtlLanguages = ['ar', 'iw', 'fa', 'ur'];
+    const cjkLanguages = ['zh-CN', 'zh-TW', 'ja', 'ko'];
+
+    textBoxWrapper.classList.remove('rtl', 'cjk');
+
+    if (rtlLanguages.includes(currentSourceLang)) {
+        textBoxWrapper.classList.add('rtl');
+    } else if (cjkLanguages.includes(currentSourceLang)) {
+        textBoxWrapper.classList.add('cjk');
+    }
+}
+
+// Update character count
+function updateCharCount() {
+    const count = userText.value.length;
+    charCount.textContent = `${count} characters`;
+
+    // Clear translation if text changed significantly
+    if (currentTranslation && Math.abs(count - currentTranslation.length) > 100) {
+        translatedTextArea.value = '';
+        translationStatus.textContent = '';
+        translationAnalysisDiv.style.display = 'none';
+    }
+}
+
+// Initialize translation when document loads
+if (typeof TranslationService !== 'undefined') {
+    initializeTranslation();
+}
