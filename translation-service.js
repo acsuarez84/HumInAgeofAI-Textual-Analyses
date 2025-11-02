@@ -1,5 +1,10 @@
 // Translation Service with 200+ Languages Support
 // Supports multiple translation APIs with fallback
+// Enhanced with proper punctuation handling for all languages including:
+// - Western languages (English, Spanish, French, German, etc.)
+// - RTL languages (Arabic, Hebrew, Persian, Urdu)
+// - CJK languages (Chinese, Japanese, Korean)
+// - Languages with special punctuation (Spanish ¿¡, French spacing, etc.)
 
 class TranslationService {
     constructor() {
@@ -197,8 +202,11 @@ class TranslationService {
                 }
             }
 
+            // Join translations while preserving proper punctuation spacing
+            const joinedTranslation = this.joinTranslations(translations, targetLang);
+
             const result = {
-                translation: translations.join(' '),
+                translation: joinedTranslation,
                 error: null
             };
 
@@ -239,27 +247,182 @@ class TranslationService {
         };
     }
 
-    // Split text into manageable chunks
+    // Split text into manageable chunks while preserving punctuation
     splitText(text, maxLength) {
         if (text.length <= maxLength) {
             return [text];
         }
 
         const chunks = [];
-        const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+        // Enhanced regex to handle multiple language punctuation marks
+        // Includes: . ! ? ¿ ¡ 。 ？ ！ ؟ ، ؛ · • …
+        const sentenceRegex = /[^.!?¿¡。？！؟]+[.!?¿¡。？！؟]+[\s]*/g;
+        const sentences = text.match(sentenceRegex) || [text];
         let currentChunk = '';
 
         for (const sentence of sentences) {
             if ((currentChunk + sentence).length <= maxLength) {
                 currentChunk += sentence;
             } else {
-                if (currentChunk) chunks.push(currentChunk);
+                if (currentChunk) {
+                    chunks.push(currentChunk.trim());
+                }
                 currentChunk = sentence;
             }
         }
 
-        if (currentChunk) chunks.push(currentChunk);
+        if (currentChunk) {
+            chunks.push(currentChunk.trim());
+        }
+
+        // If no sentences were found, split by words
+        if (chunks.length === 0) {
+            const words = text.split(/\s+/);
+            currentChunk = '';
+            for (const word of words) {
+                if ((currentChunk + ' ' + word).length <= maxLength) {
+                    currentChunk += (currentChunk ? ' ' : '') + word;
+                } else {
+                    if (currentChunk) chunks.push(currentChunk);
+                    currentChunk = word;
+                }
+            }
+            if (currentChunk) chunks.push(currentChunk);
+        }
+
         return chunks;
+    }
+
+    // Join translations with proper punctuation spacing
+    joinTranslations(translations, targetLang) {
+        if (translations.length === 0) return '';
+        if (translations.length === 1) return this.normalizePunctuation(translations[0], targetLang);
+
+        // Join with proper spacing based on language rules
+        let result = '';
+        for (let i = 0; i < translations.length; i++) {
+            const chunk = translations[i].trim();
+
+            if (i === 0) {
+                result = chunk;
+            } else {
+                // Check if previous chunk ends with punctuation
+                const prevEndsWithPunct = /[.!?¿¡。？！؟،؛]$/.test(result);
+                const currStartsWithPunct = /^[.!?¿¡。？！؟،؛]/.test(chunk);
+
+                // Add space if needed (not for CJK languages which don't use spaces)
+                const cjkLanguages = ['zh-CN', 'zh-TW', 'ja', 'ko'];
+                const needsSpace = !cjkLanguages.includes(targetLang) && !currStartsWithPunct;
+
+                if (needsSpace && prevEndsWithPunct) {
+                    result += ' ' + chunk;
+                } else if (needsSpace) {
+                    result += ' ' + chunk;
+                } else {
+                    result += chunk;
+                }
+            }
+        }
+
+        return this.normalizePunctuation(result, targetLang);
+    }
+
+    // Normalize punctuation for specific languages
+    normalizePunctuation(text, targetLang) {
+        let normalized = text;
+
+        // Remove multiple consecutive spaces
+        normalized = normalized.replace(/\s+/g, ' ');
+
+        // Fix spacing around punctuation marks
+        // Remove space before common punctuation
+        normalized = normalized.replace(/\s+([.!?,:;)])/g, '$1');
+
+        // Add space after punctuation if missing (except for decimals)
+        normalized = normalized.replace(/([.!?])([A-ZÀ-ÿА-я])/g, '$1 $2');
+        normalized = normalized.replace(/([,:;])([^\s\d])/g, '$1 $2');
+
+        // Fix spacing after opening punctuation
+        normalized = normalized.replace(/([(\[])\s+/g, '$1');
+        normalized = normalized.replace(/\s+([)\]])/g, '$1');
+
+        // Fix quote spacing
+        // Remove space after opening quotes
+        normalized = normalized.replace(/(["""'])\s+/g, '$1');
+        // Remove space before closing quotes
+        normalized = normalized.replace(/\s+(["""'])/g, '$1');
+
+        // Fix apostrophes in contractions
+        normalized = normalized.replace(/(\w)\s+'\s+(\w)/g, "$1'$2");
+
+        // Fix ellipsis spacing
+        normalized = normalized.replace(/\.\s*\.\s*\./g, '...');
+        normalized = normalized.replace(/…\s+/g, '... ');
+
+        // Fix dash spacing
+        normalized = normalized.replace(/\s*-\s*/g, '-'); // hyphen
+        normalized = normalized.replace(/\s*—\s*/g, ' — '); // em dash
+        normalized = normalized.replace(/\s*–\s*/g, ' – '); // en dash
+
+        // Language-specific punctuation fixes
+        switch(targetLang) {
+            case 'fr': // French - space before : ; ! ?
+                normalized = normalized.replace(/\s*([!?:;])/g, ' $1');
+                normalized = normalized.replace(/\s{2,}([!?:;])/g, ' $1');
+                // French quotes guillemets
+                normalized = normalized.replace(/«\s*/g, '« ');
+                normalized = normalized.replace(/\s*»/g, ' »');
+                break;
+
+            case 'es': // Spanish - inverted punctuation
+            case 'es-MX':
+                // Ensure proper spacing around ¿ and ¡
+                normalized = normalized.replace(/¿\s+/g, '¿');
+                normalized = normalized.replace(/\s+¿/g, ' ¿');
+                normalized = normalized.replace(/¡\s+/g, '¡');
+                normalized = normalized.replace(/\s+¡/g, ' ¡');
+                break;
+
+            case 'zh-CN':
+            case 'zh-TW':
+            case 'ja':
+            case 'ko':
+                // CJK languages - remove spaces around punctuation
+                normalized = normalized.replace(/\s*([。，、！？；：「」『』（）【】《》〈〉])\s*/g, '$1');
+                // Ensure no spaces between characters for CJK
+                normalized = normalized.replace(/([一-龯ぁ-んァ-ヶー가-힣])\s+([一-龯ぁ-んァ-ヶー가-힣])/g, '$1$2');
+                break;
+
+            case 'ar':
+            case 'fa':
+            case 'ur':
+            case 'iw': // Hebrew
+                // Arabic/Persian/Hebrew - fix spacing around punctuation
+                normalized = normalized.replace(/\s*([،؛؟])\s*/g, '$1 ');
+                // Arabic quotes
+                normalized = normalized.replace(/«\s*/g, '«');
+                normalized = normalized.replace(/\s*»/g, '»');
+                break;
+
+            case 'de': // German - special quote handling
+                normalized = normalized.replace(/„\s*/g, '„');
+                normalized = normalized.replace(/\s*"/g, '"');
+                break;
+
+            case 'ru': // Russian - guillemets
+            case 'uk':
+                normalized = normalized.replace(/«\s*/g, '«');
+                normalized = normalized.replace(/\s*»/g, '»');
+                break;
+        }
+
+        // Final cleanup - remove leading/trailing spaces
+        normalized = normalized.trim();
+
+        // Fix any double spaces that may have been introduced
+        normalized = normalized.replace(/\s{2,}/g, ' ');
+
+        return normalized;
     }
 
     // Delay helper for rate limiting
@@ -295,12 +458,20 @@ class TranslationService {
             analysis.quality = 'poor';
         }
 
-        // Sentence structure analysis
-        const originalSentences = original.match(/[.!?]+/g)?.length || 1;
-        const translatedSentences = translation.match(/[.!?]+/g)?.length || 1;
+        // Sentence structure analysis with multi-language support
+        const sentencePunctRegex = /[.!?¿¡。？！؟]+/g;
+        const originalSentences = original.match(sentencePunctRegex)?.length || 1;
+        const translatedSentences = translation.match(sentencePunctRegex)?.length || 1;
 
         if (Math.abs(originalSentences - translatedSentences) > 2) {
             analysis.structure.push('Sentence structure differs from original');
+        }
+
+        // Check for punctuation preservation
+        const hasPunctuation = /[.!?¿¡。？！؟،؛]/.test(translation);
+        if (original.length > 50 && !hasPunctuation) {
+            analysis.grammar.push('Punctuation may have been lost in translation');
+            analysis.quality = 'moderate';
         }
 
         // Word count comparison

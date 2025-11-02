@@ -35,11 +35,11 @@
     </header>
 
     <nav class="tab-navigation">
-        <button class="tab-btn active" data-tab="books">Book Library</button>
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="books">Book Library</button>
         <button class="tab-btn" data-tab="timeline">Timeline</button>
         <button class="tab-btn" data-tab="analysis">Text Analysis</button>
         <button class="tab-btn" data-tab="history">Analysis History</button>
-        <button class="tab-btn" data-tab="about">About</button>
     </nav>
 
     <!-- Introduction Section -->
@@ -103,23 +103,23 @@
                     <h3>🚀 Getting Started</h3>
                     <p><strong>New users:</strong> Click the tabs above to explore different features:</p>
                     <div class="tab-guide">
-                        <div class="tab-guide-item">
+                        <div class="tab-guide-item" data-tab="books">
                             <span class="tab-icon">📖</span>
                             <strong>Book Library:</strong> Browse the collection
                         </div>
-                        <div class="tab-guide-item">
+                        <div class="tab-guide-item" data-tab="timeline">
                             <span class="tab-icon">📅</span>
                             <strong>Timeline:</strong> Explore chronologically
                         </div>
-                        <div class="tab-guide-item">
+                        <div class="tab-guide-item" data-tab="analysis">
                             <span class="tab-icon">✍️</span>
                             <strong>Text Analysis:</strong> Analyze your writing
                         </div>
-                        <div class="tab-guide-item">
+                        <div class="tab-guide-item" data-tab="history">
                             <span class="tab-icon">📊</span>
                             <strong>History:</strong> View saved analyses
                         </div>
-                        <div class="tab-guide-item">
+                        <div class="tab-guide-item" data-tab="about">
                             <span class="tab-icon">ℹ️</span>
                             <strong>About:</strong> Learn more details
                         </div>
@@ -357,7 +357,8 @@
                 <button id="generate-analysis" class="primary-btn">Generate Semantic Map</button>
 
                 <div id="analysis-results" class="analysis-results">
-                    <h3>Semantic Map</h3>
+                    <h3>Semantic Web Map</h3>
+                    <div id="network-visualization" class="network-visualization"></div>
                     <div id="visualization-container"></div>
                     <div id="analysis-text" class="analysis-text"></div>
                 </div>
