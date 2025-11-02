@@ -1283,3 +1283,328 @@ function updateCharCount() {
 if (typeof TranslationService !== 'undefined') {
     initializeTranslation();
 }
+
+// ===== ACCESSIBILITY FUNCTIONALITY =====
+
+// Accessibility state
+let isHighContrast = false;
+let fontSizeLevel = 0; // 0 = normal, 1 = large, 2 = larger, 3 = largest
+let isTTSEnabled = false;
+let speechSynthesis = window.speechSynthesis;
+let currentUtterance = null;
+
+// Accessibility DOM elements
+const highContrastToggle = document.getElementById('high-contrast-toggle');
+const fontSizeIncrease = document.getElementById('font-size-increase');
+const fontSizeDecrease = document.getElementById('font-size-decrease');
+const ttsToggle = document.getElementById('text-to-speech-toggle');
+const ttsLabel = document.getElementById('tts-label');
+const resetAccessibility = document.getElementById('reset-accessibility');
+const closeIntroBtn = document.getElementById('close-intro');
+const introductionSection = document.getElementById('introduction');
+
+// Initialize accessibility features
+function initializeAccessibility() {
+    // Load saved preferences
+    loadAccessibilityPreferences();
+
+    // Setup event listeners
+    if (highContrastToggle) {
+        highContrastToggle.addEventListener('click', toggleHighContrast);
+    }
+
+    if (fontSizeIncrease) {
+        fontSizeIncrease.addEventListener('click', increaseFontSize);
+    }
+
+    if (fontSizeDecrease) {
+        fontSizeDecrease.addEventListener('click', decreaseFontSize);
+    }
+
+    if (ttsToggle) {
+        ttsToggle.addEventListener('click', toggleTextToSpeech);
+    }
+
+    if (resetAccessibility) {
+        resetAccessibility.addEventListener('click', resetAccessibilitySettings);
+    }
+
+    if (closeIntroBtn) {
+        closeIntroBtn.addEventListener('click', closeIntroduction);
+    }
+
+    // Check if intro was already closed
+    const introClosed = localStorage.getItem('introClosed');
+    if (introClosed === 'true') {
+        introductionSection.classList.add('hidden');
+    }
+}
+
+// Toggle high contrast mode
+function toggleHighContrast() {
+    isHighContrast = !isHighContrast;
+    document.body.classList.toggle('high-contrast', isHighContrast);
+    highContrastToggle.classList.toggle('active', isHighContrast);
+
+    // Save preference
+    localStorage.setItem('highContrast', isHighContrast);
+
+    // Announce change
+    const message = isHighContrast ?
+        'High contrast mode enabled. Black background with white text.' :
+        'High contrast mode disabled. Normal colors restored.';
+    announceToScreenReader(message);
+}
+
+// Increase font size
+function increaseFontSize() {
+    if (fontSizeLevel < 3) {
+        // Remove current font size class
+        document.body.classList.remove('font-size-large', 'font-size-larger', 'font-size-largest');
+
+        fontSizeLevel++;
+
+        // Add new font size class
+        if (fontSizeLevel === 1) {
+            document.body.classList.add('font-size-large');
+        } else if (fontSizeLevel === 2) {
+            document.body.classList.add('font-size-larger');
+        } else if (fontSizeLevel === 3) {
+            document.body.classList.add('font-size-largest');
+        }
+
+        // Save preference
+        localStorage.setItem('fontSizeLevel', fontSizeLevel);
+
+        announceToScreenReader(`Font size increased to level ${fontSizeLevel}`);
+    } else {
+        announceToScreenReader('Maximum font size reached');
+    }
+}
+
+// Decrease font size
+function decreaseFontSize() {
+    if (fontSizeLevel > 0) {
+        // Remove current font size class
+        document.body.classList.remove('font-size-large', 'font-size-larger', 'font-size-largest');
+
+        fontSizeLevel--;
+
+        // Add new font size class
+        if (fontSizeLevel === 1) {
+            document.body.classList.add('font-size-large');
+        } else if (fontSizeLevel === 2) {
+            document.body.classList.add('font-size-larger');
+        }
+
+        // Save preference
+        localStorage.setItem('fontSizeLevel', fontSizeLevel);
+
+        const message = fontSizeLevel === 0 ?
+            'Font size reset to normal' :
+            `Font size decreased to level ${fontSizeLevel}`;
+        announceToScreenReader(message);
+    } else {
+        announceToScreenReader('Minimum font size reached');
+    }
+}
+
+// Toggle text-to-speech
+function toggleTextToSpeech() {
+    isTTSEnabled = !isTTSEnabled;
+    ttsToggle.classList.toggle('active', isTTSEnabled);
+
+    if (isTTSEnabled) {
+        ttsLabel.textContent = 'Disable Reading';
+        announceToScreenReader('Text-to-speech enabled. Click any paragraph, heading, or text element to have it read aloud.');
+        setupTextToSpeechListeners();
+    } else {
+        ttsLabel.textContent = 'Enable Reading';
+        announceToScreenReader('Text-to-speech disabled.');
+        removeTextToSpeechListeners();
+        stopSpeaking();
+    }
+
+    // Save preference
+    localStorage.setItem('ttsEnabled', isTTSEnabled);
+}
+
+// Setup text-to-speech listeners
+function setupTextToSpeechListeners() {
+    document.body.addEventListener('click', handleTextToSpeechClick);
+}
+
+// Remove text-to-speech listeners
+function removeTextToSpeechListeners() {
+    document.body.removeEventListener('click', handleTextToSpeechClick);
+}
+
+// Handle text-to-speech click
+function handleTextToSpeechClick(e) {
+    if (!isTTSEnabled) return;
+
+    // Get the clicked element
+    let element = e.target;
+
+    // Find the nearest readable element (p, h1-h6, li, span, div with text)
+    while (element && element !== document.body) {
+        const tagName = element.tagName.toLowerCase();
+        const readableTags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'span', 'div', 'label', 'button', 'a'];
+
+        if (readableTags.includes(tagName) && element.textContent.trim()) {
+            const text = element.textContent.trim();
+
+            // Don't read if it's a button click we want to handle normally
+            if (tagName === 'button' && !element.classList.contains('accessibility-btn')) {
+                return;
+            }
+
+            // Read the text
+            speakText(text, element);
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+
+        element = element.parentElement;
+    }
+}
+
+// Speak text
+function speakText(text, element) {
+    // Stop any current speech
+    stopSpeaking();
+
+    // Create new utterance
+    currentUtterance = new SpeechSynthesisUtterance(text);
+
+    // Configure utterance
+    currentUtterance.rate = 0.9; // Slightly slower for clarity
+    currentUtterance.pitch = 1;
+    currentUtterance.volume = 1;
+
+    // Highlight element while speaking
+    if (element) {
+        element.classList.add('tts-reading');
+
+        currentUtterance.onend = () => {
+            element.classList.remove('tts-reading');
+            currentUtterance = null;
+        };
+
+        currentUtterance.onerror = () => {
+            element.classList.remove('tts-reading');
+            currentUtterance = null;
+        };
+    }
+
+    // Speak
+    speechSynthesis.speak(currentUtterance);
+}
+
+// Stop speaking
+function stopSpeaking() {
+    if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+    }
+
+    // Remove all reading highlights
+    document.querySelectorAll('.tts-reading').forEach(el => {
+        el.classList.remove('tts-reading');
+    });
+
+    currentUtterance = null;
+}
+
+// Reset all accessibility settings
+function resetAccessibilitySettings() {
+    // Reset high contrast
+    if (isHighContrast) {
+        toggleHighContrast();
+    }
+
+    // Reset font size
+    while (fontSizeLevel > 0) {
+        decreaseFontSize();
+    }
+
+    // Disable TTS if enabled
+    if (isTTSEnabled) {
+        toggleTextToSpeech();
+    }
+
+    // Clear local storage
+    localStorage.removeItem('highContrast');
+    localStorage.removeItem('fontSizeLevel');
+    localStorage.removeItem('ttsEnabled');
+
+    announceToScreenReader('All accessibility settings reset to default');
+    showNotification('Accessibility settings reset to default');
+}
+
+// Load accessibility preferences from localStorage
+function loadAccessibilityPreferences() {
+    // Load high contrast
+    const savedHighContrast = localStorage.getItem('highContrast');
+    if (savedHighContrast === 'true') {
+        isHighContrast = true;
+        document.body.classList.add('high-contrast');
+        highContrastToggle.classList.add('active');
+    }
+
+    // Load font size
+    const savedFontSize = localStorage.getItem('fontSizeLevel');
+    if (savedFontSize) {
+        fontSizeLevel = parseInt(savedFontSize);
+
+        if (fontSizeLevel === 1) {
+            document.body.classList.add('font-size-large');
+        } else if (fontSizeLevel === 2) {
+            document.body.classList.add('font-size-larger');
+        } else if (fontSizeLevel === 3) {
+            document.body.classList.add('font-size-largest');
+        }
+    }
+
+    // Load TTS preference (but don't auto-enable)
+    const savedTTS = localStorage.getItem('ttsEnabled');
+    if (savedTTS === 'true') {
+        // Show as previously enabled but don't activate automatically
+        // User needs to click to reactivate
+    }
+}
+
+// Close introduction
+function closeIntroduction() {
+    introductionSection.classList.add('hidden');
+    localStorage.setItem('introClosed', 'true');
+    announceToScreenReader('Introduction closed. Now viewing book library.');
+}
+
+// Announce to screen reader (uses aria-live region)
+function announceToScreenReader(message) {
+    // Create or use existing announcement region
+    let announcer = document.getElementById('screen-reader-announcer');
+
+    if (!announcer) {
+        announcer = document.createElement('div');
+        announcer.id = 'screen-reader-announcer';
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.style.position = 'absolute';
+        announcer.style.left = '-10000px';
+        announcer.style.width = '1px';
+        announcer.style.height = '1px';
+        announcer.style.overflow = 'hidden';
+        document.body.appendChild(announcer);
+    }
+
+    // Clear and set new message
+    announcer.textContent = '';
+    setTimeout(() => {
+        announcer.textContent = message;
+    }, 100);
+}
+
+// Initialize accessibility on page load
+initializeAccessibility();

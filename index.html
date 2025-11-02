@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Accessibility Controls -->
+    <div id="accessibility-bar" class="accessibility-bar">
+        <div class="accessibility-controls">
+            <button id="high-contrast-toggle" class="accessibility-btn" title="Toggle High Contrast Mode">
+                <span class="icon">◐</span> High Contrast
+            </button>
+            <button id="font-size-increase" class="accessibility-btn" title="Increase Font Size">
+                <span class="icon">A+</span>
+            </button>
+            <button id="font-size-decrease" class="accessibility-btn" title="Decrease Font Size">
+                <span class="icon">A-</span>
+            </button>
+            <button id="text-to-speech-toggle" class="accessibility-btn" title="Enable Text-to-Speech">
+                <span class="icon">🔊</span> <span id="tts-label">Enable Reading</span>
+            </button>
+            <button id="reset-accessibility" class="accessibility-btn" title="Reset Accessibility Settings">
+                <span class="icon">↺</span> Reset
+            </button>
+        </div>
+    </div>
+
     <header>
         <h1>LLM & Latino Women Rhetoric Tracker</h1>
         <p class="subtitle">Exploring Enhancements and Limitations of LLMs on Latino Women's Rhetoric Through Textual Analysis</p>
@@ -20,6 +41,95 @@
         <button class="tab-btn" data-tab="history">Analysis History</button>
         <button class="tab-btn" data-tab="about">About</button>
     </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="introduction-section">
+        <div class="intro-container">
+            <h2 class="intro-title">Welcome to the LLM & Latino Women Rhetoric Tracker</h2>
+
+            <div class="intro-content">
+                <div class="intro-card">
+                    <h3>🎯 What is This Website?</h3>
+                    <p>This is an interactive digital humanities platform designed to explore both the <strong>enhancements and limitations</strong> of Large Language Models (LLMs) in analyzing Latino women's rhetoric. The site features:</p>
+                    <ul>
+                        <li><strong>100 Curated Books</strong> spanning 336 years (1689-2025)</li>
+                        <li><strong>200+ Language Translation</strong> with quality analysis</li>
+                        <li><strong>Interactive Timeline</strong> visualizing literary history</li>
+                        <li><strong>Semantic Analysis Tools</strong> for comparing your writing with established works</li>
+                        <li><strong>Theoretical Framework Mapping</strong> across 9 scholarly approaches</li>
+                    </ul>
+                </div>
+
+                <div class="intro-card">
+                    <h3>📚 How to Use This Site</h3>
+                    <ol class="usage-steps">
+                        <li>
+                            <strong>Explore the Library</strong>
+                            <p>Browse 100 books using filters for genre, theory, and time period. Each book includes metadata on themes, theoretical connections, and cultural context.</p>
+                        </li>
+                        <li>
+                            <strong>View the Timeline</strong>
+                            <p>Visualize 336 years of Latino women's literary history with interactive chronological displays and period groupings.</p>
+                        </li>
+                        <li>
+                            <strong>Analyze Your Text</strong>
+                            <p>Enter your writing in any of 200+ languages, translate to English, and generate semantic maps showing connections to selected books.</p>
+                        </li>
+                        <li>
+                            <strong>Review Quality Analysis</strong>
+                            <p>Examine translation quality with grammar, structure, and meaning assessments. Compare your text thematically and theoretically with the corpus.</p>
+                        </li>
+                        <li>
+                            <strong>Access Your History</strong>
+                            <p>Save and retrieve up to 50 previous analyses. Export your research for further study.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="intro-card">
+                    <h3>♿ Accessibility Features</h3>
+                    <p>This website is designed to be accessible to all users:</p>
+                    <ul>
+                        <li><strong>High Contrast Mode:</strong> Black background with white text for users with color impairments</li>
+                        <li><strong>Text-to-Speech:</strong> Click any text to have it read aloud for visually impaired users</li>
+                        <li><strong>Font Size Controls:</strong> Increase or decrease text size as needed</li>
+                        <li><strong>Keyboard Navigation:</strong> Full keyboard support throughout the site</li>
+                        <li><strong>Screen Reader Compatible:</strong> Semantic HTML for assistive technologies</li>
+                    </ul>
+                    <p class="accessibility-note">Use the accessibility controls at the top of the page to customize your experience.</p>
+                </div>
+
+                <div class="intro-card highlight">
+                    <h3>🚀 Getting Started</h3>
+                    <p><strong>New users:</strong> Click the tabs above to explore different features:</p>
+                    <div class="tab-guide">
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">📖</span>
+                            <strong>Book Library:</strong> Browse the collection
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">📅</span>
+                            <strong>Timeline:</strong> Explore chronologically
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">✍️</span>
+                            <strong>Text Analysis:</strong> Analyze your writing
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">📊</span>
+                            <strong>History:</strong> View saved analyses
+                        </div>
+                        <div class="tab-guide-item">
+                            <span class="tab-icon">ℹ️</span>
+                            <strong>About:</strong> Learn more details
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="close-intro" class="close-intro-btn">Continue to Book Library →</button>
+        </div>
+    </section>
 
     <main>
         <!-- Books Tab -->
