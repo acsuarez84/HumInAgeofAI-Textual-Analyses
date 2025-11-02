@@ -109,29 +109,35 @@ function renderBooks(books) {
         return;
     }
 
-    booksGrid.innerHTML = books.map(book => `
-        <div class="book-card" data-id="${book.id}">
-            <h3>${book.title}</h3>
-            <p class="author">${book.author}</p>
-            <div class="meta">
-                <span class="meta-item">📅 ${book.year}</span>
-                <span class="meta-item">🌍 ${book.country}</span>
+    booksGrid.innerHTML = books.map(book => {
+        // Create search link for the book
+        const searchQuery = encodeURIComponent(`"${book.title}" ${book.author}`);
+        const bookLink = book.link || `https://www.google.com/search?q=${searchQuery}`;
+
+        return `
+            <div class="book-card" data-id="${book.id}">
+                <h3><a href="${bookLink}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none;">${book.title}</a></h3>
+                <p class="author">${book.author}</p>
+                <div class="meta">
+                    <span class="meta-item">📅 ${book.year}</span>
+                    <span class="meta-item">🌍 ${book.country}</span>
+                </div>
+                <span class="genre-badge">${book.genre}</span>
+                <div class="themes">
+                    ${book.themes.slice(0, 3).map(theme =>
+                        `<span class="theme-tag">${theme}</span>`
+                    ).join('')}
+                    ${book.themes.length > 3 ? `<span class="theme-tag">+${book.themes.length - 3} more</span>` : ''}
+                </div>
+                <div class="theories">
+                    ${book.connectingTheory.map(theory =>
+                        `<span class="theory-tag">${theory}</span>`
+                    ).join('')}
+                </div>
+                <p class="abstract">${book.abstract}</p>
             </div>
-            <span class="genre-badge">${book.genre}</span>
-            <div class="themes">
-                ${book.themes.slice(0, 3).map(theme =>
-                    `<span class="theme-tag">${theme}</span>`
-                ).join('')}
-                ${book.themes.length > 3 ? `<span class="theme-tag">+${book.themes.length - 3} more</span>` : ''}
-            </div>
-            <div class="theories">
-                ${book.connectingTheory.map(theory =>
-                    `<span class="theory-tag">${theory}</span>`
-                ).join('')}
-            </div>
-            <p class="abstract">${book.abstract}</p>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Apply Filters
@@ -984,6 +990,10 @@ function createTimelineBookHTML(book, index) {
 
     const color = genreColors[book.genre] || '6B7280';
 
+    // Create search link for the book
+    const searchQuery = encodeURIComponent(`"${book.title}" ${book.author}`);
+    const bookLink = book.link || `https://www.google.com/search?q=${searchQuery}`;
+
     return `
         <div class="timeline-item">
             <span class="timeline-year-marker">${book.year}</span>
@@ -993,7 +1003,7 @@ function createTimelineBookHTML(book, index) {
                 </div>
                 <div class="timeline-book-content">
                     <div class="timeline-book-year">${book.year}</div>
-                    <h4 class="timeline-book-title">${book.title}</h4>
+                    <h4 class="timeline-book-title"><a href="${bookLink}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none;">${book.title}</a></h4>
                     <p class="timeline-book-author">${book.author}</p>
                     <div class="timeline-book-meta">
                         <span class="timeline-book-meta-item">🌍 ${book.country}</span>
@@ -1332,6 +1342,18 @@ function initializeAccessibility() {
     if (closeIntroBtn) {
         closeIntroBtn.addEventListener('click', closeIntroduction);
     }
+
+    // Setup tab guide item listeners
+    const tabGuideItems = document.querySelectorAll('.tab-guide-item');
+    tabGuideItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const tabName = item.getAttribute('data-tab');
+            if (tabName) {
+                closeIntroduction();
+                switchTab(tabName);
+            }
+        });
+    });
 
     // Check if intro was already closed
     const introClosed = localStorage.getItem('introClosed');
