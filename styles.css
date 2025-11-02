@@ -635,6 +635,18 @@ body.high-contrast .timeline-book-title a {
     color: #FFFFFF !important;
 }
 
+body.high-contrast .timeline-year-marker {
+    color: #000000 !important;
+    background: #FFFFFF !important;
+    border: 2px solid #FFFFFF;
+}
+
+body.high-contrast .timeline-period-header h3 {
+    color: #000000 !important;
+    background: #FFFFFF !important;
+    border: 2px solid #FFFFFF;
+}
+
 .book-card .author {
     font-weight: 600;
     color: var(--text-primary);
